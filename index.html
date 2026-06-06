@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simba Equipment – Built Strong. Made to Work.</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #F5A800;
+    --gold-dark: #C98700;
+    --black: #0A0A0A;
+    --dark: #111111;
+    --dark2: #1A1A1A;
+    --dark3: #222222;
+    --white: #FFFFFF;
+    --gray: #888888;
+    --gray-light: #CCCCCC;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ---- TOPBAR ---- */
+  .topbar {
+    background: var(--gold);
+    padding: 6px 40px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 32px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--black);
+  }
+  .topbar a { color: var(--black); text-decoration: none; }
+  .topbar a:hover { text-decoration: underline; }
+
+  /* ---- NAV ---- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 68px;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  /* Placeholder box where real logo image will go */
+  .nav-logo-img {
+    width: 44px;
+    height: 44px;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--black);
+    flex-shrink: 0;
+  }
+
+  .nav-brand {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    gap: 2px;
+  }
+
+  .nav-brand-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .nav-brand-sub {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray-light);
+    text-decoration: none;
+    padding: 8px 18px;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%; right: 50%;
+    height: 2px;
+    background: var(--gold);
+    transition: left 0.2s, right 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+  .nav-links a:hover::after { left: 18px; right: 18px; }
+
+  .nav-cta {
+    background: var(--gold) !important;
+    color: var(--black) !important;
+    padding: 10px 24px !important;
+    font-weight: 700 !important;
+  }
+  .nav-cta:hover { background: var(--gold-dark) !important; color: var(--white) !important; }
+  .nav-cta::after { display: none !important; }
+
+  /* ---- HERO ---- */
+  .hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #0d0700;
+  }
+
+  /* Warm sunset atmosphere */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 55% at 75% 45%, rgba(255,120,0,0.22) 0%, rgba(180,60,0,0.08) 45%, transparent 70%),
+      linear-gradient(to right, rgba(10,7,0,1) 0%, rgba(10,7,0,0.55) 45%, rgba(10,7,0,0.1) 100%);
+    z-index: 1;
+  }
+
+  /* Ground glow */
+  .hero-ground {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 180px;
+    background: linear-gradient(to top, rgba(245,168,0,0.07) 0%, transparent 100%);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 72px;
+    padding-bottom: 100px;
+    max-width: 680px;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 22px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .hero-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(64px, 8.5vw, 116px);
+    font-weight: 700;
+    line-height: 0.92;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-bottom: 28px;
+  }
+
+  .hero-title span {
+    color: var(--gold);
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.65);
+    max-width: 460px;
+    line-height: 1.65;
+    margin-bottom: 42px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    color: var(--black);
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 38px;
+    transition: background 0.2s, transform 0.15s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 60%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: skewX(-15deg);
+    transition: left 0.4s;
+  }
+
+  .btn-primary:hover { background: var(--gold-dark); transform: translateY(-2px); }
+  .btn-primary:hover::before { left: 160%; }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--white);
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 36px;
+    border: 2px solid rgba(255,255,255,0.25);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ---- HERO IMAGE PLACEHOLDER ---- */
+  .hero-img-zone {
+    position: absolute;
+    right: 0; top: 0; bottom: 60px;
+    width: 55%;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    border: 1px dashed rgba(245,168,0,0.2);
+    margin: 20px;
+    background: rgba(245,168,0,0.03);
+  }
+
+  .hero-img-placeholder .ph-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,168,0,0.4);
+  }
+
+  .hero-img-placeholder .ph-sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.05em;
+  }
+
+  /* ---- HERO BADGE STRIP ---- */
+  .hero-badges {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    z-index: 3;
+    background: rgba(0,0,0,0.88);
+    border-top: 2px solid var(--gold);
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-badge {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 40px;
+    border-right: 1px solid rgba(255,255,255,0.07);
+    flex: 1;
+    max-width: 280px;
+  }
+
+  .hero-badge:last-child { border-right: none; }
+
+  .hero-badge-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    opacity: 0.85;
+  }
+
+  .hero-badge-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 1.3;
+  }
+
+  .hero-badge-text span {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    color: var(--gray);
+    text-transform: none;
+    margin-top: 3px;
+  }
+
+  /* ---- SECTION HEADERS ---- */
+  .section-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  .section-label::before,
+  .section-label::after {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 2px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(38px, 5vw, 58px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .section-title em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  /* ---- FEATURED ---- */
+  .section-featured {
+    padding: 96px 60px;
+    background: var(--dark);
+  }
+
+  .featured-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 3px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .featured-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--dark2);
+    cursor: pointer;
+    min-height: 320px;
+  }
+
+  .featured-card.large {
+    grid-row: span 2;
+    min-height: 660px;
+  }
+
+  /* Clean image placeholder - no fake drawings */
+  .feat-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .featured-card:nth-child(1) .feat-img { background: linear-gradient(160deg, #1c1000 0%, #0d0700 100%); }
+  .featured-card:nth-child(2) .feat-img { background: linear-gradient(160deg, #0e1800 0%, #060d00 100%); }
+  .featured-card:nth-child(3) .feat-img { background: linear-gradient(160deg, #001018 0%, #00080d 100%); }
+
+  .feat-img-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(245,168,0,0.35);
+    border: 1px dashed rgba(245,168,0,0.2);
+    padding: 8px 20px;
+  }
+
+  .featured-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.15) 55%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px 32px;
+    transition: background 0.3s;
+  }
+
+  .featured-card:hover .featured-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.35) 65%, rgba(245,168,0,0.04) 100%);
+  }
+
+  .featured-tag {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .featured-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  .featured-card.large .featured-name { font-size: 46px; }
+
+  .featured-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.58);
+    line-height: 1.6;
+    max-width: 360px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .featured-card:hover .featured-desc { opacity: 1; transform: translateY(0); }
+
+  .featured-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .featured-link::after { content: '→'; transition: transform 0.2s; }
+  .featured-card:hover .featured-link::after { transform: translateX(4px); }
+
+  /* ---- PRODUCTS ---- */
+  .section-products {
+    padding: 96px 60px;
+    background: var(--black);
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .product-card {
+    background: var(--dark2);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .product-img {
+    aspect-ratio: 4/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+  }
+
+  /* Simple dark gradient backgrounds - no drawings */
+  .product-card:nth-child(1) .product-img { background: linear-gradient(145deg, #1c1000, #0d0700); }
+  .product-card:nth-child(2) .product-img { background: linear-gradient(145deg, #0e1800, #060d00); }
+  .product-card:nth-child(3) .product-img { background: linear-gradient(145deg, #001018, #00080d); }
+  .product-card:nth-child(4) .product-img { background: linear-gradient(145deg, #150012, #0a0009); }
+  .product-card:nth-child(5) .product-img { background: linear-gradient(145deg, #181800, #0c0c00); }
+  .product-card:nth-child(6) .product-img { background: linear-gradient(145deg, #001810, #000d08); }
+  .product-card:nth-child(7) .product-img { background: linear-gradient(145deg, #12000d, #09000a); }
+  .product-card:nth-child(8) .product-img { background: linear-gradient(145deg, #180800, #0d0400); }
+
+  .prod-ph-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,168,0,0.3);
+    border: 1px dashed rgba(245,168,0,0.15);
+    padding: 6px 14px;
+  }
+
+  .product-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 3px;
+    background: var(--gold);
+    transition: width 0.3s;
+  }
+
+  .product-card:hover::after { width: 100%; }
+
+  .product-info {
+    padding: 18px 20px 20px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .product-category {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .product-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    margin-bottom: 5px;
+    line-height: 1.1;
+  }
+
+  .product-spec {
+    font-size: 12px;
+    color: var(--gray);
+    line-height: 1.4;
+  }
+
+  .product-arrow {
+    position: absolute;
+    top: 12px; right: 12px;
+    width: 30px; height: 30px;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    font-size: 13px;
+    font-weight: 900;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .product-card:hover .product-arrow { opacity: 1; transform: translateY(0); }
+
+  /* ---- STATS ---- */
+  .stats-bar {
+    background: var(--gold);
+    padding: 48px 60px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .stat {
+    text-align: center;
+    padding: 0 56px;
+    border-right: 1px solid rgba(0,0,0,0.15);
+    flex: 1;
+    max-width: 240px;
+  }
+
+  .stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 54px;
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.55);
+  }
+
+  /* ---- WHY SIMBA ---- */
+  .section-why {
+    padding: 96px 60px;
+    background: var(--dark);
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .why-card {
+    background: var(--dark2);
+    padding: 40px 30px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.25s;
+  }
+
+  .why-card:hover { background: var(--dark3); }
+
+  .why-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 0;
+    background: var(--gold);
+    transition: height 0.3s;
+  }
+
+  .why-card:hover::before { height: 100%; }
+
+  .why-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: rgba(245,168,0,0.12);
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+
+  .why-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .why-desc {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+
+  /* ---- CONTACT ---- */
+  .section-contact-wrap {
+    background: var(--dark);
+    padding: 96px 60px;
+  }
+
+  .section-contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .contact-left h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(42px, 5vw, 66px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    line-height: 0.95;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+
+  .contact-left h2 em { font-style: normal; color: var(--gold); }
+
+  .contact-left p {
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 36px;
+    max-width: 400px;
+  }
+
+  .contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .contact-icon {
+    width: 42px; height: 42px;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    font-size: 17px;
+    flex-shrink: 0;
+  }
+
+  .contact-detail-label {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .contact-detail-value {
+    font-family: 'Oswald', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-group label {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: var(--dark3);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 2px solid rgba(245,168,0,0.3);
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    padding: 12px 14px;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-bottom-color: var(--gold);
+    background: #282828;
+  }
+
+  .form-group select option { background: #1A1A1A; }
+  .form-group textarea { resize: none; height: 110px; }
+
+  .form-submit {
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 17px 40px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    align-self: flex-start;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .form-submit::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 60%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: skewX(-15deg);
+    transition: left 0.4s;
+  }
+
+  .form-submit:hover { background: var(--gold-dark); transform: translateY(-2px); }
+  .form-submit:hover::before { left: 160%; }
+
+  /* ---- FOOTER ---- */
+  footer {
+    background: var(--dark2);
+    border-top: 2px solid var(--gold);
+    padding: 60px 60px 30px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .footer-brand-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--white);
+  }
+
+  .footer-brand-eq {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-top: 2px;
+    margin-bottom: 14px;
+  }
+
+  .footer-brand p {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.7;
+    max-width: 270px;
+  }
+
+  .footer-col h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(245,168,0,0.2);
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col ul li { margin-bottom: 9px; }
+
+  .footer-col ul li a {
+    font-size: 13px;
+    color: var(--gray);
+    text-decoration: none;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .footer-col ul li a::before {
+    content: '›';
+    color: var(--gold);
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .footer-col ul li a:hover { color: var(--white); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    color: var(--gray);
+  }
+
+  .footer-tagline {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ---- SCROLL REVEAL ---- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  .stagger-1 { transition-delay: 0.05s; }
+  .stagger-2 { transition-delay: 0.12s; }
+  .stagger-3 { transition-delay: 0.19s; }
+  .stagger-4 { transition-delay: 0.26s; }
+  .stagger-5 { transition-delay: 0.33s; }
+  .stagger-6 { transition-delay: 0.40s; }
+  .stagger-7 { transition-delay: 0.47s; }
+  .stagger-8 { transition-delay: 0.54s; }
+
+  /* ---- HERO ENTRY ANIMATIONS ---- */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.6s ease 0.1s both; }
+  .hero-title   { animation: fadeUp 0.6s ease 0.25s both; }
+  .hero-sub     { animation: fadeUp 0.6s ease 0.4s both; }
+  .hero-actions { animation: fadeUp 0.6s ease 0.52s both; }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <a href="tel:+14322350801">&#9990; 432-235-0801</a>
+  <a href="mailto:mrobinson@simbaequipment.com">&#9993; mrobinson@simbaequipment.com</a>
+  <a href="#contact">Request a Quote</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="simba-logo-svg.svg" alt="Simba Equipment" style="height:48px;width:auto;">
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#products">All Equipment</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ground"></div>
+
+  <div class="hero-img-zone">
+    <img src="telehandler-hero.png" alt="Simba Equipment Telehandler" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">Heavy Equipment Solutions</div>
+    <h1 class="hero-title">
+      BUILT STRONG.
+      <span>MADE TO WORK.</span>
+    </h1>
+    <p class="hero-sub">
+      Telehandlers, man lifts, cranes, and more. Simba Equipment delivers machines engineered for the job site and backed by dedicated support.
+    </p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-primary">Browse Equipment</a>
+      <a href="#contact" class="btn-secondary">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- Badge strip -->
+  <div class="hero-badges">
+    <div class="hero-badge">
+      <svg class="hero-badge-icon" viewBox="0 0 36 36" fill="none">
+        <path d="M18 3L22 13H33L24.5 19.5L27.5 30L18 24L8.5 30L11.5 19.5L3 13H14L18 3Z" stroke="#F5A800" stroke-width="2" fill="none"/>
+      </svg>
+      <div class="hero-badge-text">Built to Last<span>Heavy-gauge construction throughout</span></div>
+    </div>
+    <div class="hero-badge">
+      <svg class="hero-badge-icon" viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="18" r="14" stroke="#F5A800" stroke-width="2"/>
+        <path d="M18 10V18L23 23" stroke="#F5A800" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="18" cy="18" r="2" fill="#F5A800"/>
+      </svg>
+      <div class="hero-badge-text">Maximum Performance<span>Industry-leading lift capacity and reach</span></div>
+    </div>
+    <div class="hero-badge">
+      <svg class="hero-badge-icon" viewBox="0 0 36 36" fill="none">
+        <rect x="4" y="4" width="28" height="28" rx="3" stroke="#F5A800" stroke-width="2"/>
+        <path d="M11 18L16 23L25 13" stroke="#F5A800" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="hero-badge-text">Dependable by Design<span>ISO 9001:2015 certified manufacturing</span></div>
+    </div>
+    <div class="hero-badge">
+      <svg class="hero-badge-icon" viewBox="0 0 36 36" fill="none">
+        <path d="M6 28L18 6L30 28H6Z" stroke="#F5A800" stroke-width="2" fill="none"/>
+        <path d="M12 28L18 16L24 28" stroke="#F5A800" stroke-width="1.5" fill="none"/>
+      </svg>
+      <div class="hero-badge-text">Ready for Any Terrain<span>4WD all-terrain capability across the line</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED EQUIPMENT -->
+<section class="section-featured">
+  <div class="section-header reveal">
+    <div class="section-label">Our Specialty</div>
+    <h2 class="section-title">FEATURED <em>EQUIPMENT</em></h2>
+  </div>
+
+  <div class="featured-grid">
+    <!-- Telehandlers - tall left card -->
+    <div class="featured-card large reveal stagger-1">
+      <div class="feat-img" style="padding:0;">
+        <img src="telehandler-product-line.png" alt="Simba Telehandler" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+      </div>
+      <div class="featured-overlay">
+        <div class="featured-tag">Featured Category</div>
+        <div class="featured-name">Telehandlers</div>
+        <div class="featured-desc">3.5 to 4.5 ton capacity with boom heights up to 18 meters. Built for construction, agriculture, and industrial sites that demand versatility.</div>
+        <a href="#" class="featured-link">View All Telehandlers</a>
+      </div>
+    </div>
+
+    <!-- Man Lifts -->
+    <div class="featured-card reveal stagger-2">
+      <div class="feat-img" style="padding:0;">
+        <img src="man-lift.png" alt="Simba Man Lift" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+      </div>
+      <div class="featured-overlay">
+        <div class="featured-tag">Featured Category</div>
+        <div class="featured-name">Man Lifts</div>
+        <div class="featured-desc">Self-propelled aerial work platforms from 22m to 32m in telescopic and articulating configurations.</div>
+        <a href="#" class="featured-link">View All Man Lifts</a>
+      </div>
+    </div>
+
+    <!-- Truck Mounted Cranes -->
+    <div class="featured-card reveal stagger-3">
+      <div class="feat-img" style="padding:0;">
+        <img src="truck-mounted-crane.png" alt="Simba Truck Mounted Crane" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+      </div>
+      <div class="featured-overlay">
+        <div class="featured-tag">Heavy Lift</div>
+        <div class="featured-name">Truck Mounted Cranes</div>
+        <div class="featured-desc">3 to 20 ton lifting capacity. Mobile, powerful, and ready for demanding lift jobs.</div>
+        <a href="#" class="featured-link">View Cranes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALL PRODUCTS -->
+<section class="section-products" id="products">
+  <div class="section-header reveal">
+    <div class="section-label">Full Line</div>
+    <h2 class="section-title">ALL <em>EQUIPMENT</em></h2>
+  </div>
+
+  <div class="products-grid">
+    <div class="product-card reveal stagger-1">
+      <div class="product-img" style="padding:0;">
+        <img src="telehandler-product-line.png" alt="Simba Telehandler" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+      </div>
+      <div class="product-info">
+        <div class="product-category">Specialty</div>
+        <div class="product-name">Telehandlers</div>
+        <div class="product-spec">3.5T to 4.5T &nbsp;/&nbsp; Up to 18m Reach</div>
+      </div>
+      <div class="product-arrow">&#8594;</div>
+    </div>
+
+    <div class="product-card reveal stagger-2">
+      <div class="product-img" style="padding:0;">
+        <img src="man-lift.png" alt="Simba Aerial Work Platform" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+      </div>
+      <div class="product-info">
+        <div class="product-category">Specialty</div>
+        <div class="product-name">Aerial Work Platforms</div>
+        <div class="product-spec">21m to 56m &nbsp;/&nbsp; Self-Propelled &amp; Truck-Mounted</div>
+      </div>
+      <div class="product-arrow">&#8594;</div>
+    </div>
+
+    <div class="product-card reveal stagger-3">
+      <div class="product-img" style="padding:0;">
+        <img src="truck-mounted-crane.png" alt="Simba Truck Mounted Crane" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+      </div>
+      <div class="product-info">
+        <div class="product-category">Heavy Lift</div>
+        <div class="product-name">Truck Mounted Cranes</div>
+        <div class="product-spec">3T to 20T Capacity</div>
+      </div>
+      <div class="product-arrow">&#8594;</div>
+    </div>
+
+    <div class="product-card reveal stagger-4">
+      <div class="product-img" style="padding:0;">
+        <img src="knuckle-boom-crane.png" alt="Simba Knuckle Boom Crane" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+      </div>
+      <div class="product-info">
+        <div class="product-category">Heavy Lift</div>
+        <div class="product-name">Knuckle Boom Cranes</div>
+        <div class="product-spec">Up to 80T &nbsp;/&nbsp; Flexible Articulation</div>
+      </div>
+      <div class="product-arrow">&#8594;</div>
+    </div>
+
+    <div class="product-card reveal stagger-5">
+      <div class="product-img" style="padding:0;">
+        <img src="insulated-arm-truck.png" alt="Simba Insulated Arm Truck" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+      </div>
+      <div class="product-info">
+        <div class="product-category">Utility</div>
+        <div class="product-name">Insulated Arm Trucks</div>
+        <div class="product-spec">46kV Rated &nbsp;/&nbsp; Live-Line Work</div>
+      </div>
+      <div class="product-arrow">&#8594;</div>
+    </div>
+
+    <div class="product-card reveal stagger-6">
+      <div class="product-img" style="padding:0;">
+        <img src="excavator.png" alt="Simba Excavator" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+      </div>
+      <div class="product-info">
+        <div class="product-category">Ground Work</div>
+        <div class="product-name">Excavators</div>
+        <div class="product-spec">Multiple Classes Available</div>
+      </div>
+      <div class="product-arrow">&#8594;</div>
+    </div>
+
+    <div class="product-card reveal stagger-7">
+      <div class="product-img" style="padding:0;">
+        <img src="bulldozer-loader.png" alt="Simba Bulldozer" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+      </div>
+      <div class="product-info">
+        <div class="product-category">Ground Work</div>
+        <div class="product-name">Loaders &amp; Bulldozers</div>
+        <div class="product-spec">Skid Steer, Telescopic Arm &amp; Track</div>
+      </div>
+      <div class="product-arrow">&#8594;</div>
+    </div>
+
+    <div class="product-card reveal stagger-8">
+      <div class="product-img" style="padding:0;">
+        <img src="concrete-laser-screed.png" alt="Simba Concrete Laser Screed" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+      </div>
+      <div class="product-info">
+        <div class="product-category">Finishing</div>
+        <div class="product-name">Concrete Laser Screeds</div>
+        <div class="product-spec">Precision Grade Control</div>
+      </div>
+      <div class="product-arrow">&#8594;</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat reveal stagger-1">
+    <div class="stat-num">8+</div>
+    <div class="stat-label">Product Categories</div>
+  </div>
+  <div class="stat reveal stagger-2">
+    <div class="stat-num">18m</div>
+    <div class="stat-label">Max Telehandler Reach</div>
+  </div>
+  <div class="stat reveal stagger-3">
+    <div class="stat-num">56m</div>
+    <div class="stat-label">Max Lift Height</div>
+  </div>
+  <div class="stat reveal stagger-4">
+    <div class="stat-num">4WD</div>
+    <div class="stat-label">All Terrain Capable</div>
+  </div>
+</div>
+
+<!-- WHY SIMBA -->
+<section class="section-why">
+  <div class="section-header reveal">
+    <div class="section-label">Our Promise</div>
+    <h2 class="section-title">WHY <em>SIMBA</em></h2>
+  </div>
+
+  <div class="why-grid">
+    <div class="why-card reveal stagger-1">
+      <div class="why-num">01</div>
+      <div class="why-title">Built to Last</div>
+      <div class="why-desc">Every machine in our lineup is engineered with heavy-gauge steel frames, reinforced booms, and components selected for long service life in demanding conditions.</div>
+    </div>
+    <div class="why-card reveal stagger-2">
+      <div class="why-num">02</div>
+      <div class="why-title">Maximum Performance</div>
+      <div class="why-desc">From 3.5-ton telehandlers to 56-meter aerial platforms, Simba equipment delivers the power, reach, and responsiveness your crew depends on to stay productive.</div>
+    </div>
+    <div class="why-card reveal stagger-3">
+      <div class="why-num">03</div>
+      <div class="why-title">Certified Quality</div>
+      <div class="why-desc">Manufactured under ISO 9001:2015 quality management standards with CE and SGS certifications. Documented quality, not just a promise.</div>
+    </div>
+    <div class="why-card reveal stagger-4">
+      <div class="why-num">04</div>
+      <div class="why-title">Dedicated Support</div>
+      <div class="why-desc">Our team is here before and after the sale. From spec consultation to parts and service, Simba stands behind every machine we sell.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section-contact-wrap" id="contact">
+  <div class="section-contact">
+    <div class="contact-left reveal">
+      <h2>GET A <em>QUOTE</em><br>TODAY</h2>
+      <p>Tell us what you need and we will get back to you with pricing, availability, and full specs for any machine in our lineup.</p>
+
+      <div class="contact-detail">
+        <div class="contact-icon">&#9990;</div>
+        <div>
+          <div class="contact-detail-label">Phone</div>
+          <div class="contact-detail-value">432-235-0801</div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">&#9993;</div>
+        <div>
+          <div class="contact-detail-label">Email</div>
+          <div class="contact-detail-value">mrobinson@simbaequipment.com</div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">&#9679;</div>
+        <div>
+          <div class="contact-detail-label">Location</div>
+          <div class="contact-detail-value">Midland, TX</div>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form reveal stagger-2">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="John">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Smith">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" placeholder="(555) 000-0000">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="you@company.com">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Equipment of Interest</label>
+        <select>
+          <option value="">Select a Category...</option>
+          <option>Telehandlers</option>
+          <option>Aerial Work Platforms / Man Lifts</option>
+          <option>Truck Mounted Cranes</option>
+          <option>Knuckle Boom Cranes</option>
+          <option>Insulated Arm Trucks</option>
+          <option>Excavators</option>
+          <option>Loaders / Bulldozers</option>
+          <option>Concrete Laser Screeds</option>
+          <option>Other / Multiple</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Tell us about your project, specs needed, quantity, or any questions..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Request &#8594;</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="simba-logo-svg.svg" alt="Simba Equipment" style="height:80px;width:auto;margin-bottom:14px;">
+      <p>Built Strong. Made to Work. Simba Equipment supplies the full line of heavy machinery for construction, utility, agricultural, and industrial operations.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Telehandlers &amp; Lifts</h4>
+      <ul>
+        <li><a href="#">4.5T / 18m Telehandler</a></li>
+        <li><a href="#">4T / 17m Telehandler</a></li>
+        <li><a href="#">3.5T / 7m Telehandler</a></li>
+        <li><a href="#">32m Self-Propelled Lift</a></li>
+        <li><a href="#">28m Self-Propelled Lift</a></li>
+        <li><a href="#">22m Articulating Boom</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>All Equipment</h4>
+      <ul>
+        <li><a href="#">Truck Mounted Cranes</a></li>
+        <li><a href="#">Knuckle Boom Cranes</a></li>
+        <li><a href="#">Insulated Arm Trucks</a></li>
+        <li><a href="#">Excavators</a></li>
+        <li><a href="#">Loaders &amp; Bulldozers</a></li>
+        <li><a href="#">Concrete Laser Screeds</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About Simba</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#contact">Request a Quote</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">&#169; 2026 Simba Equipment. All rights reserved.</div>
+    <div class="footer-tagline">Built Strong. Made to Work.</div>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
+</body>
+</html>
