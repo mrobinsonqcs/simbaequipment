@@ -1092,21 +1092,30 @@
       padding: 8px 14px !important;
     }
 
-    /* Hero image zone: 40% opacity */
+    /* Hero image zone: hidden on mobile */
     .hero-img-zone {
-      opacity: 0.4;
+      display: none;
+    }
+
+    /* Featured grid: single column */
+    .featured-grid {
+      grid-template-columns: 1fr;
+    }
+    .featured-card.large {
+      grid-row: span 1;
+      min-height: 280px;
+    }
+    .featured-card {
+      min-height: 280px;
+    }
+    .featured-desc {
+      opacity: 1;
+      transform: none;
     }
   }
 </style>
 </head>
 <body>
-
-<!-- TOPBAR -->
-<div class="topbar">
-  <a href="tel:+14322350801">&#9990; 432-235-0801</a>
-  <a href="mailto:mrobinson@simbaequipment.com">&#9993; mrobinson@simbaequipment.com</a>
-  <a href="#contact">Request a Quote</a>
-</div>
 
 <!-- NAV -->
 <nav>
