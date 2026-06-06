@@ -1030,6 +1030,73 @@
   .hero-title   { animation: fadeUp 0.6s ease 0.25s both; }
   .hero-sub     { animation: fadeUp 0.6s ease 0.4s both; }
   .hero-actions { animation: fadeUp 0.6s ease 0.52s both; }
+
+  /* ---- MOBILE RESPONSIVE ---- */
+  @media (max-width: 767px) {
+    /* Products grid: 4 → 2 columns */
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Why Simba: 4 → 1 column */
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+
+    /* Contact section: 2 → 1 column */
+    .section-contact {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    /* Form row: 2 → 1 column */
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+
+    /* Footer: stacked to 1 column */
+    .footer-top {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    /* Hero badges: 2x2 wrap */
+    .hero-badges {
+      flex-wrap: wrap;
+    }
+    .hero-badge {
+      flex: 1 1 50%;
+      max-width: 50%;
+      border-right: none;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 16px 20px;
+    }
+    .hero-badge:nth-child(odd) {
+      border-right: 1px solid rgba(255,255,255,0.07);
+    }
+    .hero-badge:nth-child(3),
+    .hero-badge:nth-child(4) {
+      border-bottom: none;
+    }
+
+    /* Nav: reduced font size and padding */
+    nav {
+      padding: 0 16px;
+      height: 60px;
+    }
+    .nav-links a {
+      font-size: 12px;
+      padding: 6px 10px;
+    }
+    .nav-cta {
+      padding: 8px 14px !important;
+    }
+
+    /* Hero image zone: 40% opacity */
+    .hero-img-zone {
+      opacity: 0.4;
+    }
+  }
 </style>
 </head>
 <body>
@@ -1044,7 +1111,7 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <img src="simba-logo-svg.svg" alt="Simba Equipment" style="height:48px;width:auto;">
+    <img src="simba-logo-svg.svg" alt="Simba Equipment" style="height:58px;width:auto;">
   </a>
 
   <ul class="nav-links">
@@ -1123,7 +1190,7 @@
     <!-- Telehandlers - tall left card -->
     <div class="featured-card large reveal stagger-1">
       <div class="feat-img" style="padding:0;">
-        <img src="telehandler-product-line.png" alt="Simba Telehandler" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+        <img src="telehandler-product-line.png" alt="Simba Telehandler" style="width:100%;height:100%;object-fit:cover;object-position:center 60%;">
       </div>
       <div class="featured-overlay">
         <div class="featured-tag">Featured Category</div>
@@ -1149,7 +1216,7 @@
     <!-- Truck Mounted Cranes -->
     <div class="featured-card reveal stagger-3">
       <div class="feat-img" style="padding:0;">
-        <img src="truck-mounted-crane.png" alt="Simba Truck Mounted Crane" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+        <img src="truck-mounted-crane.png" alt="Simba Truck Mounted Crane" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;">
       </div>
       <div class="featured-overlay">
         <div class="featured-tag">Heavy Lift</div>
