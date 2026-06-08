@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 – Page Not Found | Simba Equipment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #F5A800;
+    --gold-dark: #C98700;
+    --black: #0A0A0A;
+    --dark: #111111;
+    --dark2: #1A1A1A;
+    --white: #FFFFFF;
+    --gray: #888888;
+    --gray-light: #CCCCCC;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1, h2, h3 { font-family: 'Oswald', sans-serif; font-weight: 600; letter-spacing: 0.5px; }
+
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  img { max-width: 100%; display: block; }
+
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(245,168,0,0.12);
+    z-index: 1000;
+  }
+
+  .nav-logo { display: flex; align-items: center; gap: 12px; }
+  .nav-logo img { height: 38px; }
+  .nav-logo span {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .nav-logo span em { color: var(--gold); font-style: normal; }
+
+  .nav-links { display: flex; align-items: center; gap: 8px; }
+  .nav-links a {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 16px;
+    border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+    color: var(--gray-light);
+  }
+  .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--black) !important;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    padding: 12px 24px !important;
+    border-radius: 4px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-cta:hover { background: var(--gold-dark); transform: translateY(-1px); }
+
+  /* 404 SECTION */
+  .not-found {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 32px 80px;
+    text-align: center;
+  }
+
+  .not-found-inner { max-width: 560px; }
+
+  .not-found-code {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(100px, 20vw, 160px);
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    letter-spacing: -4px;
+    margin-bottom: 16px;
+  }
+
+  .not-found-title {
+    font-size: clamp(24px, 4vw, 36px);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: var(--white);
+  }
+
+  .not-found-desc {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 18px;
+    color: var(--gray-light);
+    margin-bottom: 40px;
+  }
+
+  .btn-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    color: var(--black);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 15px;
+    padding: 16px 36px;
+    border-radius: 4px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-home:hover { background: var(--gold-dark); transform: translateY(-2px); }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid rgba(245,168,0,0.1);
+    padding: 60px 0 0;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .footer-brand img { height: 36px; margin-bottom: 16px; }
+  .footer-brand p {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: var(--gray);
+    font-size: 14px;
+    max-width: 260px;
+    line-height: 1.7;
+  }
+
+  .footer-col-title {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+
+  .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+  .footer-col ul li a {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    color: var(--gray);
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--white); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    color: var(--gray);
+  }
+
+  @media (max-width: 767px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .not-found-code { font-size: 100px; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: 1 / -1; }
+    .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="assets/simba-icon.svg" alt="Simba Equipment">
+    <span>SIMBA <em>EQUIPMENT</em></span>
+  </a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/#products">All Equipment</a>
+    <a href="/#about">About</a>
+  </div>
+  <a href="/#contact" class="nav-cta">Get a Quote</a>
+</nav>
+
+<section class="not-found">
+  <div class="not-found-inner">
+    <div class="not-found-code">404</div>
+    <h1 class="not-found-title">Page Not Found</h1>
+    <p class="not-found-desc">The page you are looking for does not exist or has been moved.</p>
+    <a href="/" class="btn-home">&#8592; Back to Home</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/simba-logo-svg.svg" alt="Simba Equipment">
+        <p>Heavy equipment sales, rentals, and service built around the needs of your job site.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Equipment</div>
+        <ul>
+          <li><a href="/equipment/telehandlers">Telehandlers</a></li>
+          <li><a href="/equipment/man-lifts">Man Lifts</a></li>
+          <li><a href="/equipment/truck-mounted-cranes">Truck-Mounted Cranes</a></li>
+          <li><a href="/equipment/knuckle-boom-cranes">Knuckle Boom Cranes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">More Equipment</div>
+        <ul>
+          <li><a href="/equipment/insulated-arm-trucks">Insulated Arm Trucks</a></li>
+          <li><a href="/equipment/excavators">Excavators</a></li>
+          <li><a href="/equipment/loaders-bulldozers">Loaders &amp; Bulldozers</a></li>
+          <li><a href="/equipment/concrete-laser-screeds">Concrete Laser Screeds</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#products">All Equipment</a></li>
+          <li><a href="/#contact">Get a Quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Simba Equipment. All rights reserved.</span>
+      <span>Built for the job site.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
