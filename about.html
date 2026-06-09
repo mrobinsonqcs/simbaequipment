@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Simba – Built Strong. Made to Work.</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #F5A800;
+    --gold-dark: #C98700;
+    --black: #0A0A0A;
+    --dark: #111111;
+    --dark2: #1A1A1A;
+    --dark3: #222222;
+    --white: #FFFFFF;
+    --gray: #888888;
+    --gray-light: #CCCCCC;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ---- NAV ---- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 68px;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .nav-logo span {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+  .nav-logo span em { color: var(--gold); font-style: normal; }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray-light);
+    text-decoration: none;
+    padding: 10px 16px;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%; right: 50%;
+    height: 2px;
+    background: var(--gold);
+    transition: left 0.2s, right 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+  .nav-links a:hover::after { left: 18px; right: 18px; }
+
+  .nav-cta {
+    background: var(--gold) !important;
+    color: var(--black) !important;
+    padding: 10px 24px !important;
+    font-weight: 700 !important;
+  }
+  .nav-cta:hover { background: var(--gold-dark) !important; color: var(--white) !important; }
+  .nav-cta::after { display: none !important; }
+
+  /* ---- HERO ---- */
+  .hero {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #0d0700;
+    text-align: center;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 45%, rgba(255,120,0,0.18) 0%, rgba(180,60,0,0.06) 45%, transparent 70%),
+      linear-gradient(to bottom, rgba(10,7,0,0.4) 0%, rgba(10,7,0,1) 100%);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 80px 24px;
+    max-width: 760px;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 22px;
+    justify-content: center;
+  }
+
+  .hero-eyebrow::before,
+  .hero-eyebrow::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .hero-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(48px, 8.5vw, 96px);
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-bottom: 22px;
+  }
+
+  .hero-title em {
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.65;
+  }
+
+  /* ---- ABOUT CONTENT ---- */
+  .section-about {
+    padding: 96px 24px;
+    background: var(--dark);
+  }
+
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .about-block {
+    padding: 48px 0;
+    border-top: 2px solid var(--gold);
+  }
+
+  .about-block:first-child {
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .about-block h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--white);
+    margin-bottom: 18px;
+  }
+
+  .about-block p {
+    font-size: 16px;
+    color: var(--gray-light);
+    line-height: 1.8;
+  }
+
+  /* ---- STATS ---- */
+  .about-stats {
+    background: var(--black);
+    padding: 80px 24px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2px;
+  }
+
+  .about-stat {
+    background: var(--dark2);
+    border-top: 3px solid var(--gold);
+    text-align: center;
+    padding: 36px 24px;
+    flex: 1 1 240px;
+    max-width: 280px;
+  }
+
+  .about-stat-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold);
+    line-height: 1.4;
+  }
+
+  /* ---- CTA ---- */
+  .section-cta {
+    background: var(--dark);
+    border-top: 2px solid var(--gold);
+    padding: 96px 24px;
+    text-align: center;
+  }
+
+  .section-cta h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(34px, 5vw, 54px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .section-cta p {
+    font-size: 16px;
+    color: var(--gray);
+    margin-bottom: 36px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    color: var(--black);
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 38px;
+    transition: background 0.2s, transform 0.15s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 60%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: skewX(-15deg);
+    transition: left 0.4s;
+  }
+
+  .btn-primary:hover { background: var(--gold-dark); transform: translateY(-2px); }
+  .btn-primary:hover::before { left: 160%; }
+
+  /* ---- FOOTER ---- */
+  footer {
+    background: var(--dark2);
+    border-top: 2px solid var(--gold);
+    padding: 60px 60px 30px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .footer-brand-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--white);
+  }
+
+  .footer-brand-eq {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-top: 2px;
+    margin-bottom: 14px;
+  }
+
+  .footer-brand p {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.7;
+    max-width: 270px;
+  }
+
+  .footer-col h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(245,168,0,0.2);
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col ul li { margin-bottom: 9px; }
+
+  .footer-col ul li a {
+    font-size: 13px;
+    color: var(--gray);
+    text-decoration: none;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .footer-col ul li a::before {
+    content: '›';
+    color: var(--gold);
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .footer-col ul li a:hover { color: var(--white); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    color: var(--gray);
+  }
+
+  .footer-tagline {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ---- SCROLL REVEAL ---- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  .stagger-1 { transition-delay: 0.05s; }
+  .stagger-2 { transition-delay: 0.12s; }
+  .stagger-3 { transition-delay: 0.19s; }
+  .stagger-4 { transition-delay: 0.26s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.6s ease 0.1s both; }
+  .hero-title   { animation: fadeUp 0.6s ease 0.25s both; }
+  .hero-sub     { animation: fadeUp 0.6s ease 0.4s both; }
+
+  /* ---- MOBILE RESPONSIVE ---- */
+  @media (max-width: 767px) {
+    nav {
+      padding: 0 16px;
+      height: 60px;
+    }
+    .nav-links a {
+      font-size: 12px;
+      padding: 6px 10px;
+    }
+    .nav-cta {
+      padding: 8px 14px !important;
+    }
+
+    .hero {
+      min-height: 40vh;
+    }
+
+    .section-about,
+    .about-stats,
+    .section-cta {
+      padding: 64px 20px;
+    }
+
+    .about-stat {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+
+    .footer-top {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    footer {
+      padding: 48px 24px 24px;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="assets/simba-icon.svg" alt="Simba Equipment" style="height:38px;width:auto;">
+    <span>SIMBA <em>EQUIPMENT</em></span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/equipment">All Equipment</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/#contact" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Who We Are</div>
+    <h1 class="hero-title">ABOUT <em>SIMBA</em></h1>
+    <p class="hero-sub">Built Strong. Made to Work.</p>
+  </div>
+</section>
+
+<!-- ABOUT CONTENT -->
+<section class="section-about">
+  <div class="about-content">
+    <div class="about-block reveal">
+      <h2>OUR <em style="color: var(--gold); font-style: normal;">MISSION</em></h2>
+      <p>Simba Equipment was founded with one goal: to bring serious, heavy-duty machinery to job sites across the country at a price point that makes sense for contractors, utility companies, and industrial operations of all sizes.</p>
+    </div>
+
+    <div class="about-block reveal">
+      <h2>WHO WE <em style="color: var(--gold); font-style: normal;">ARE</em></h2>
+      <p>Based in Corpus Christi, TX, we supply a full line of equipment including telehandlers, man lifts, aerial work platforms, cranes, excavators, loaders, and concrete laser screeds. Every machine in our lineup is built to the same standard - heavy gauge construction, proven components, and performance that holds up under daily working conditions.</p>
+    </div>
+
+    <div class="about-block reveal">
+      <h2>HOW WE <em style="color: var(--gold); font-style: normal;">WORK</em></h2>
+      <p>We work directly with our manufacturer to maintain quality control and offer competitive pricing without cutting corners. Whether you need one machine or a full fleet, we handle the process from spec consultation to delivery.</p>
+    </div>
+
+    <div class="about-block reveal">
+      <h2>OUR <em style="color: var(--gold); font-style: normal;">PROMISE</em></h2>
+      <p>At Simba, we do not just sell equipment. We stand behind it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="about-stats">
+  <div class="about-stat reveal stagger-1">
+    <div class="about-stat-text">Based in Corpus Christi, TX</div>
+  </div>
+  <div class="about-stat reveal stagger-2">
+    <div class="about-stat-text">Full Equipment Lineup</div>
+  </div>
+  <div class="about-stat reveal stagger-3">
+    <div class="about-stat-text">Direct Manufacturer Relationship</div>
+  </div>
+  <div class="about-stat reveal stagger-4">
+    <div class="about-stat-text">Dedicated Support</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="section-cta">
+  <h2>READY TO GET <em style="color: var(--gold); font-style: normal;">STARTED?</em></h2>
+  <p>Contact us today for pricing availability and spec consultation.</p>
+  <a href="/#contact" class="btn-primary">Get a Quote</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="assets/simba-logo-svg.svg" alt="Simba Equipment" style="height:80px;width:auto;margin-bottom:14px;">
+      <p>Built Strong. Made to Work. Simba Equipment supplies the full line of heavy machinery for construction, utility, agricultural, and industrial operations.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Telehandlers &amp; Lifts</h4>
+      <ul>
+        <li><a href="#">4.5T / 18m Telehandler</a></li>
+        <li><a href="#">4T / 17m Telehandler</a></li>
+        <li><a href="#">3.5T / 7m Telehandler</a></li>
+        <li><a href="/equipment/man-lifts">32m Self-Propelled Lift</a></li>
+        <li><a href="/equipment/man-lifts">28m Self-Propelled Lift</a></li>
+        <li><a href="/equipment/man-lifts">22m Articulating Boom</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>All Equipment</h4>
+      <ul>
+        <li><a href="#">Truck Mounted Cranes</a></li>
+        <li><a href="#">Knuckle Boom Cranes</a></li>
+        <li><a href="#">Insulated Arm Trucks</a></li>
+        <li><a href="#">Excavators</a></li>
+        <li><a href="#">Loaders &amp; Bulldozers</a></li>
+        <li><a href="#">Concrete Laser Screeds</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about">About Simba</a></li>
+        <li><a href="/#contact">Contact Us</a></li>
+        <li><a href="/#contact">Request a Quote</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">&#169; 2026 Simba Equipment. All rights reserved.</div>
+    <div class="footer-tagline">Built Strong. Made to Work.</div>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
+</body>
+</html>
