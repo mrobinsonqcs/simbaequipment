@@ -209,6 +209,81 @@
     .footer-brand { grid-column: 1 / -1; }
     .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
   }
+
+  /* ---- MOBILE NAV TOGGLE ---- */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    z-index: 1001;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+  .nav-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .nav-toggle.active span:nth-child(2) { opacity: 0; }
+  .nav-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  @media (max-width: 767px) {
+    .nav-toggle { display: flex; }
+
+    .nav-links {
+      display: flex !important;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      margin: 0;
+      list-style: none;
+      background: #0A0A0A;
+      border-bottom: 2px solid var(--gold);
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transition: max-height 0.3s ease, opacity 0.25s ease, visibility 0.3s;
+    }
+    .nav-links.active {
+      max-height: 500px;
+      opacity: 1;
+      visibility: visible;
+    }
+    .nav-links li { width: 100%; }
+    .nav-links a {
+      width: 100%;
+      min-height: 48px;
+      font-size: 15px !important;
+      padding: 14px 24px !important;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-links a::after { display: none !important; }
+    .nav-links .nav-cta {
+      margin: 12px 24px;
+      width: calc(100% - 48px);
+      justify-content: center;
+      border-bottom: none;
+    }
+  }
 </style>
 </head>
 <body>
@@ -218,12 +293,15 @@
     <img src="/assets/simba-icon.svg" alt="Simba Equipment">
     <span>SIMBA <em>EQUIPMENT</em></span>
   </a>
+  <button class="nav-toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-links">
     <a href="/">Home</a>
     <a href="/equipment">All Equipment</a>
     <a href="/about">About</a>
+    <a href="/#contact" class="nav-cta">Get a Quote</a>
   </div>
-  <a href="/#contact" class="nav-cta">Get a Quote</a>
 </nav>
 
 <section class="not-found">
@@ -277,5 +355,24 @@
   </div>
 </footer>
 
+
+<script>
+  (function () {
+    var navToggle = document.querySelector('.nav-toggle');
+    var navLinks = document.querySelector('.nav-links');
+    if (!navToggle || !navLinks) return;
+    navToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      navToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+    document.addEventListener('click', function (e) {
+      if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
+    });
+  })();
+</script>
 </body>
 </html>
