@@ -477,7 +477,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Simba Equipment. All rights reserved.</span>
+      <span>&copy; <span id="copyright-year">2026</span> Simba Equipment. All rights reserved.</span>
       <span>Built for the job site.</span>
     </div>
   </div>
@@ -524,6 +524,10 @@
       }
     });
   })();
+</script>
+
+<script>
+  document.getElementById('copyright-year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
