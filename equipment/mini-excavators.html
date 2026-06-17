@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Excavators | Simba Equipment</title>
+<meta name="description" content="Simba Equipment mini excavators built for compact power in tight spaces. Zero tail swing options and multiple attachment types. Contact us for availability and pricing.">
+<link rel="icon" type="image/svg+xml" href="/assets/simba-icon.svg">
+<meta property="og:site_name" content="Simba Equipment">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mini Excavators | Simba Equipment">
+<meta property="og:description" content="Simba Equipment mini excavators built for compact power in tight spaces. Zero tail swing options and multiple attachment types. Contact us for availability and pricing.">
+<meta property="og:image" content="https://simbaequipment.com/images/mini-excavator-digging.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #F5A800;
+    --gold-dark: #C98700;
+    --black: #0A0A0A;
+    --dark: #111111;
+    --dark2: #1A1A1A;
+    --dark3: #222222;
+    --white: #FFFFFF;
+    --gray: #888888;
+    --gray-light: #CCCCCC;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; font-weight: 600; letter-spacing: 0.5px; }
+
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  img { max-width: 100%; display: block; }
+
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+
+  /* BREADCRUMB */
+  .breadcrumb {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 20px;
+  }
+  .breadcrumb a { color: var(--gray-light); transition: color 0.2s; }
+  .breadcrumb a:hover { color: var(--gold); }
+  .breadcrumb span { color: var(--gold); }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(245,168,0,0.12);
+    z-index: 1000;
+  }
+
+  .nav-logo { display: flex; align-items: center; gap: 12px; }
+  .nav-logo img { height: 38px; }
+  .nav-logo span {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .nav-logo span em { color: var(--gold); font-style: normal; }
+
+  .nav-links { display: flex; align-items: center; gap: 8px; }
+  .nav-links a {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 16px;
+    border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+    color: var(--gray-light);
+  }
+  .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--black) !important;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    padding: 12px 24px !important;
+    border-radius: 4px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-cta:hover { background: var(--gold-dark); transform: translateY(-1px); }
+
+  /* BUTTONS */
+  .btn-primary, .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 15px;
+    padding: 16px 32px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+  .btn-primary { background: var(--gold); color: var(--black); }
+  .btn-primary:hover { background: var(--gold-dark); transform: translateY(-2px); }
+  .btn-secondary { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.25); }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* PAGE HERO */
+  .page-hero {
+    position: relative;
+    padding: 160px 0 0;
+    background: radial-gradient(ellipse at top right, rgba(245,168,0,0.08), transparent 60%), var(--black);
+    overflow: hidden;
+  }
+  .page-hero-inner {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 48px;
+    padding-bottom: 64px;
+  }
+  .page-hero-eyebrow {
+    display: inline-block;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gold);
+    border: 1px solid rgba(245,168,0,0.3);
+    border-radius: 999px;
+    padding: 8px 18px;
+    margin-bottom: 24px;
+  }
+  .page-hero-title {
+    font-size: clamp(34px, 5vw, 64px);
+    line-height: 1.05;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .page-hero-title em { color: var(--gold); font-style: normal; }
+  .page-hero-sub {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+    color: var(--gray-light);
+    max-width: 520px;
+    margin-bottom: 32px;
+  }
+  .page-hero-img {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(245,168,0,0.15);
+    background: #1a1000;
+  }
+  .page-hero-img img { width: 100%; height: 100%; object-fit: contain; }
+
+  .page-hero-stats {
+    display: flex;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .page-hero-stat {
+    flex: 1;
+    text-align: center;
+    padding: 28px 20px;
+    border-right: 1px solid rgba(255,255,255,0.07);
+  }
+  .page-hero-stat:last-child { border-right: none; }
+  .page-hero-stat-value {
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--gold);
+  }
+  .page-hero-stat-label {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray);
+    margin-top: 6px;
+  }
+
+  /* SECTION */
+  .section { padding: 100px 0; }
+  .section-header { max-width: 640px; margin: 0 auto 56px; text-align: center; }
+  .section-label {
+    display: inline-block;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .section-title {
+    font-size: clamp(30px, 4vw, 44px);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .section-desc { font-family: 'Roboto Condensed', sans-serif; color: var(--gray-light); font-size: 17px; }
+
+  /* MODELS */
+  .section-models { background: var(--dark); }
+
+  .model-single { display: flex; justify-content: center; }
+  .model-single .model-card { max-width: 540px; width: 100%; }
+
+  .model-card {
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.25s, border-color 0.25s;
+    display: flex;
+    flex-direction: column;
+  }
+  .model-card:hover { transform: translateY(-6px); border-color: rgba(245,168,0,0.25); }
+  .model-img { position: relative; height: 280px; overflow: hidden; background: #1a1000; }
+
+  /* CAROUSEL */
+  .carousel { position: absolute; inset: 0; }
+  .carousel-track { position: relative; width: 100%; height: 100%; }
+  .carousel-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+  .carousel-slide.active { opacity: 1; }
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(10,10,10,0.55);
+    color: var(--gold);
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.2s, color 0.2s;
+  }
+  .carousel-arrow:hover { background: rgba(10,10,10,0.8); color: var(--white); }
+  .carousel-arrow-prev { left: 12px; }
+  .carousel-arrow-next { right: 12px; }
+  .carousel-dots {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+  }
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gray);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .carousel-dot.active { background: var(--gold); transform: scale(1.25); }
+
+  .model-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--gold);
+    color: var(--black);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    z-index: 2;
+  }
+  .model-body { padding: 28px; display: flex; flex-direction: column; flex: 1; }
+  .model-name { font-size: 26px; text-transform: uppercase; margin-bottom: 12px; }
+  .model-desc {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 15px;
+    color: var(--gray-light);
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  .model-specs { flex: 1; margin-bottom: 24px; }
+  .model-spec-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .model-spec-row span:first-child { color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px; font-size: 13px; }
+  .model-spec-row span:last-child { color: var(--white); font-weight: 700; }
+  .model-cta {
+    display: block;
+    text-align: center;
+    background: var(--gold);
+    color: var(--black);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    padding: 14px;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  .model-cta:hover { background: var(--gold-dark); }
+
+  .models-note {
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    color: var(--gray);
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  /* FEATURES */
+  .section-features { background: var(--black); }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .feature-card {
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 32px 28px;
+    transition: transform 0.25s, border-color 0.25s;
+  }
+  .feature-card:hover { transform: translateY(-4px); border-color: rgba(245,168,0,0.25); }
+  .feature-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .feature-title { font-size: 19px; text-transform: uppercase; margin-bottom: 10px; }
+  .feature-desc { font-family: 'Roboto Condensed', sans-serif; color: var(--gray-light); font-size: 15px; }
+
+  /* CONTACT */
+  .section-contact {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .contact-detail { display: flex; gap: 16px; margin-bottom: 28px; }
+  .contact-detail-icon {
+    width: 44px; height: 44px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background: rgba(245,168,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+  }
+  .contact-detail-title { font-family: 'Roboto Condensed', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 13px; color: var(--gray); margin-bottom: 4px; }
+  .contact-detail-value { font-family: 'Roboto Condensed', sans-serif; font-size: 17px; color: var(--white); }
+
+  .contact-form { background: var(--dark2); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 36px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .form-group { margin-bottom: 18px; }
+  .form-group label {
+    display: block;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray);
+    margin-bottom: 8px;
+  }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    background: var(--dark3);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 14px 16px;
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+  .form-group textarea { min-height: 120px; resize: vertical; }
+  .form-submit {
+    width: 100%;
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 15px;
+    padding: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .form-submit:hover { background: var(--gold-dark); }
+
+  /* FOOTER */
+  footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,0.06); padding: 72px 0 0; }
+  .footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 56px; }
+  .footer-brand { display: flex; flex-direction: column; gap: 16px; }
+  .footer-brand img { height: 36px; }
+  .footer-brand p { font-family: 'Roboto Condensed', sans-serif; color: var(--gray); font-size: 15px; max-width: 280px; }
+  .footer-col-title { font-family: 'Roboto Condensed', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 14px; color: var(--white); margin-bottom: 18px; }
+  .footer-col ul li { margin-bottom: 12px; }
+  .footer-col ul li a { font-family: 'Roboto Condensed', sans-serif; font-size: 15px; color: var(--gray); transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--gold); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    color: var(--gray);
+  }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .stagger-1.visible { transition-delay: 0.05s; }
+  .stagger-2.visible { transition-delay: 0.1s; }
+  .stagger-3.visible { transition-delay: 0.15s; }
+  .stagger-4.visible { transition-delay: 0.2s; }
+
+  /* MOBILE */
+  @media (max-width: 767px) {
+    nav { padding: 0 16px; height: 60px; }
+    .nav-links a { font-size: 12px; padding: 6px 10px; }
+    .nav-cta { padding: 8px 14px !important; }
+
+    .page-hero { padding-top: 120px; }
+    .page-hero-inner { grid-template-columns: 1fr; gap: 32px; padding-bottom: 40px; }
+    .page-hero-img { order: -1; }
+    .page-hero-stats { flex-wrap: wrap; }
+    .page-hero-stat {
+      flex: 1 1 50%;
+      max-width: 50%;
+      border-right: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 18px 12px;
+    }
+    .page-hero-stat:nth-child(2n) { border-right: none; }
+    .page-hero-stat:nth-last-child(-n+2) { border-bottom: none; }
+
+    .model-single .model-card { max-width: 100%; }
+    .carousel-arrow { width: 32px; height: 32px; font-size: 16px; }
+    .carousel-arrow-prev { left: 8px; }
+    .carousel-arrow-next { right: 8px; }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .section-contact { grid-template-columns: 1fr; gap: 40px; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    .section { padding: 64px 0; }
+  }
+
+  /* ---- MOBILE NAV TOGGLE ---- */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    z-index: 1001;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+  .nav-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .nav-toggle.active span:nth-child(2) { opacity: 0; }
+  .nav-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  @media (max-width: 767px) {
+    .nav-toggle { display: flex; }
+
+    .nav-links {
+      display: flex !important;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      margin: 0;
+      list-style: none;
+      background: #0A0A0A;
+      border-bottom: 2px solid var(--gold);
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transition: max-height 0.3s ease, opacity 0.25s ease, visibility 0.3s;
+    }
+    .nav-links.active {
+      max-height: 500px;
+      opacity: 1;
+      visibility: visible;
+    }
+    .nav-links li { width: 100%; }
+    .nav-links a {
+      width: 100%;
+      min-height: 48px;
+      font-size: 15px !important;
+      padding: 14px 24px !important;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-links a::after { display: none !important; }
+    .nav-links .nav-cta {
+      margin: 12px 24px;
+      width: calc(100% - 48px);
+      justify-content: center;
+      border-bottom: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/simba-icon.svg" alt="Simba Equipment">
+    <span>SIMBA <em>EQUIPMENT</em></span>
+  </a>
+  <button class="nav-toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/equipment">All Equipment</a>
+    <a href="/about">About</a>
+    <a href="#contact" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="reveal visible">
+        <div class="breadcrumb"><a href="excavators.html">Excavators</a> / <span>Mini Excavators</span></div>
+        <span class="page-hero-eyebrow">Compact Equipment</span>
+        <h1 class="page-hero-title"><em>Mini Excavators</em></h1>
+        <p class="page-hero-sub">Compact Power for Tight Spaces.</p>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="#models" class="btn-primary">View Models &#8594;</a>
+          <a href="#contact" class="btn-secondary">Request a Quote</a>
+        </div>
+      </div>
+      <div class="page-hero-img reveal visible stagger-1">
+        <img src="../images/mini-excavator-digging.webp" alt="Mini excavator digging">
+      </div>
+    </div>
+    <div class="page-hero-stats reveal visible stagger-2">
+      <div class="page-hero-stat">
+        <div class="page-hero-stat-value">Compact</div>
+        <div class="page-hero-stat-label">Size</div>
+      </div>
+      <div class="page-hero-stat">
+        <div class="page-hero-stat-value">Zero Tail</div>
+        <div class="page-hero-stat-label">Swing Options</div>
+      </div>
+      <div class="page-hero-stat">
+        <div class="page-hero-stat-value">Multiple</div>
+        <div class="page-hero-stat-label">Attachment Types</div>
+      </div>
+      <div class="page-hero-stat">
+        <div class="page-hero-stat-value">Low</div>
+        <div class="page-hero-stat-label">Ground Pressure</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODELS -->
+<section class="section section-models" id="models">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">The Lineup</span>
+      <h2 class="section-title">Mini Excavator</h2>
+      <p class="section-desc">Compact hydraulic excavators for tight spaces and smaller job sites.</p>
+    </div>
+    <div class="model-single reveal">
+      <div class="model-card">
+        <div class="model-img">
+          <span class="model-badge">Compact Equipment</span>
+          <div class="carousel" data-carousel>
+            <div class="carousel-track">
+              <img src="../images/mini-excavator-side.webp" alt="Mini excavator side profile view" class="carousel-slide active">
+              <img src="../images/mini-excavator-quarter.webp" alt="Mini excavator front quarter view" class="carousel-slide">
+              <img src="../images/mini-excavator-digging.webp" alt="Mini excavator digging" class="carousel-slide">
+            </div>
+            <button type="button" class="carousel-arrow carousel-arrow-prev" data-carousel-prev aria-label="Previous image">&#8249;</button>
+            <button type="button" class="carousel-arrow carousel-arrow-next" data-carousel-next aria-label="Next image">&#8250;</button>
+            <div class="carousel-dots">
+              <button type="button" class="carousel-dot active" data-carousel-dot aria-label="Show image 1"></button>
+              <button type="button" class="carousel-dot" data-carousel-dot aria-label="Show image 2"></button>
+              <button type="button" class="carousel-dot" data-carousel-dot aria-label="Show image 3"></button>
+            </div>
+          </div>
+        </div>
+        <div class="model-body">
+          <h3 class="model-name">Mini Excavator</h3>
+          <p class="model-desc">Compact hydraulic excavators built for tight spaces, with zero tail swing options and low ground pressure for smaller job sites.</p>
+          <div class="model-specs">
+            <div class="model-spec-row"><span>Size</span><span>Compact</span></div>
+            <div class="model-spec-row"><span>Tail Swing</span><span>Zero Tail Swing Options</span></div>
+            <div class="model-spec-row"><span>Attachments</span><span>Multiple Types</span></div>
+            <div class="model-spec-row"><span>Ground Pressure</span><span>Low</span></div>
+          </div>
+          <a href="#contact" class="model-cta">Request a Quote</a>
+        </div>
+      </div>
+    </div>
+    <p class="models-note reveal">Full specifications and additional models coming soon. Contact us for current availability and pricing.</p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section section-features">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Why Simba Mini Excavators</span>
+      <h2 class="section-title">Built to Work</h2>
+      <p class="section-desc">Compact, capable excavators engineered for tight job sites and everyday digging tasks.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal stagger-1">
+        <div class="feature-num">01</div>
+        <h3 class="feature-title">Compact Size</h3>
+        <p class="feature-desc">Small footprint makes it easy to maneuver and operate in tight spaces other equipment can't reach.</p>
+      </div>
+      <div class="feature-card reveal stagger-2">
+        <div class="feature-num">02</div>
+        <h3 class="feature-title">Zero Tail Swing Options</h3>
+        <p class="feature-desc">Work safely close to walls, structures, and obstacles without overhang concerns.</p>
+      </div>
+      <div class="feature-card reveal stagger-3">
+        <div class="feature-num">03</div>
+        <h3 class="feature-title">Multiple Attachment Types</h3>
+        <p class="feature-desc">Quick-attach options expand capability for digging, grading, and material handling tasks.</p>
+      </div>
+      <div class="feature-card reveal stagger-4">
+        <div class="feature-num">04</div>
+        <h3 class="feature-title">Low Ground Pressure</h3>
+        <p class="feature-desc">Reduced ground disturbance protects finished surfaces and sensitive terrain.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Get In Touch</span>
+      <h2 class="section-title">Request a Quote</h2>
+      <p class="section-desc">Tell us about your project and a Simba Equipment specialist will follow up with pricing and availability.</p>
+    </div>
+    <div class="section-contact">
+      <div class="reveal stagger-1">
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-detail-title">Phone</div>
+            <div class="contact-detail-value">432-235-0801</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="contact-detail-title">Email</div>
+            <div class="contact-detail-value">mrobinson@simbaequipment.com</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-detail-title">Location</div>
+            <div class="contact-detail-value">Corpus Christi, TX</div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form reveal stagger-2" action="https://formspree.io/f/mrevpgqr" method="POST">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" name="first-name" placeholder="John"></div>
+          <div class="form-group"><label>Last Name</label><input type="text" name="last-name" placeholder="Smith"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="(555) 000-0000"></div>
+          <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@company.com"></div>
+        </div>
+        <div class="form-group">
+          <label>Equipment of Interest</label>
+          <select name="equipment">
+            <option>Telehandlers</option>
+            <option>Aerial Work Platforms / Man Lifts</option>
+            <option>Truck-Mounted Cranes</option>
+            <option>Knuckle Boom Cranes</option>
+            <option>Insulated Arm Trucks</option>
+            <option>Forklifts</option>
+            <option selected>Excavators</option>
+            <option>Loaders &amp; Bulldozers</option>
+            <option>Air Compressors</option>
+            <option>Pumps</option>
+            <option>Concrete Laser Screeds</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message</label><textarea name="message" placeholder="Tell us about your project, capacity needed, and timeline..."></textarea></div>
+        <button type="submit" class="form-submit">Send Request &#8594;</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="../assets/simba-logo-svg.svg" alt="Simba Equipment">
+        <p>Heavy equipment sales, rentals, and service built around the needs of your job site.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Equipment</div>
+        <ul>
+          <li><a href="telehandlers.html#models">Telehandlers</a></li>
+          <li><a href="man-lifts.html">Man Lifts</a></li>
+          <li><a href="excavators.html">Excavators</a></li>
+          <li><a href="mini-excavators.html">Mini Excavators</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">More Equipment</div>
+        <ul>
+          <li><a href="cranes.html">Cranes</a></li>
+          <li><a href="forklifts.html">Forklifts</a></li>
+          <li><a href="loaders-bulldozers.html">Loaders &amp; Bulldozers</a></li>
+          <li><a href="pumps.html">Pumps</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/equipment">All Equipment</a></li>
+          <li><a href="#contact">Get a Quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="copyright-year">2026</span> Simba Equipment. All rights reserved.</span>
+      <span>Built for the job site.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => observer.observe(el));
+
+  document.querySelectorAll('[data-carousel]').forEach(carousel => {
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const dots = carousel.querySelectorAll('[data-carousel-dot]');
+    const prevBtn = carousel.querySelector('[data-carousel-prev]');
+    const nextBtn = carousel.querySelector('[data-carousel-next]');
+    let current = 0;
+
+    function goTo(index) {
+      current = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+
+<script>
+  (function () {
+    var navToggle = document.querySelector('.nav-toggle');
+    var navLinks = document.querySelector('.nav-links');
+    if (!navToggle || !navLinks) return;
+    navToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      navToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+    document.addEventListener('click', function (e) {
+      if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
+    });
+  })();
+</script>
+
+<script>
+  document.getElementById('copyright-year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
