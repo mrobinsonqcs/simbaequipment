@@ -239,6 +239,65 @@
     .section { padding: 60px 0; }
     .container { padding: 0 16px; }
   }
+
+  /* DROPDOWN NAV */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown-trigger {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 16px;
+    border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+    color: var(--gray-light);
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    line-height: 1;
+  }
+  .nav-dropdown-trigger:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+  .nav-dropdown-trigger .dd-arrow { font-size: 10px; transition: transform 0.2s; display: inline-block; }
+  .nav-dropdown.open .nav-dropdown-trigger .dd-arrow { transform: rotate(180deg); }
+  .nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 220px;
+    background: #0A0A0A;
+    border: 1px solid rgba(245,168,0,0.2);
+    border-radius: 6px;
+    padding: 8px 0;
+    z-index: 2000;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  }
+  .nav-dropdown.open .nav-dropdown-menu { display: block; }
+  .nav-dropdown-menu a {
+    display: block;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 10px 20px;
+    color: var(--gray-light);
+    transition: color 0.2s, background 0.2s;
+    white-space: nowrap;
+  }
+  .nav-dropdown-menu a:hover { color: var(--gold); background: rgba(245,168,0,0.06); }
+  .nav-dropdown-menu .dd-all-link {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    color: var(--gold);
+    margin-bottom: 4px;
+    padding-bottom: 12px;
+  }
+  .nav-dropdown-menu .dd-all-link:hover { background: rgba(245,168,0,0.08); }
+
 </style>
 </head>
 <body>
@@ -253,7 +312,24 @@
   </button>
   <div class="nav-links">
     <a href="/">Home</a>
-    <a href="/equipment">All Equipment</a>
+    <div class="nav-dropdown">
+    <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+      All Equipment <span class="dd-arrow">&#9660;</span>
+    </button>
+    <div class="nav-dropdown-menu">
+      <a href="/equipment" class="dd-all-link">&#9654; All Equipment</a>
+      <a href="/equipment/telehandlers">Telehandlers</a>
+      <a href="/equipment/man-lifts">Man Lifts</a>
+      <a href="/equipment/cranes">Cranes</a>
+      <a href="/equipment/forklifts">Forklifts</a>
+      <a href="/equipment/excavators">Excavators</a>
+      <a href="/equipment/loaders-bulldozers">Loaders &amp; Bulldozers</a>
+      <a href="/equipment/concrete-laser-screeds">Concrete Laser Screeds</a>
+      <a href="/equipment/air-compressors">Air Compressors</a>
+      <a href="/equipment/pumps">Pumps</a>
+      <a href="/equipment/attachments">Attachments</a>
+    </div>
+  </div>
     <a href="/equipment/attachments">Attachments</a>
     <a href="/about">About</a>
     <a href="#contact" class="nav-cta">Get a Quote</a>
@@ -677,6 +753,36 @@
   })();
 
   document.getElementById('copyright-year').textContent = new Date().getFullYear();
+</script>
+
+<script>
+(function() {
+  var dropdowns = document.querySelectorAll('.nav-dropdown');
+  dropdowns.forEach(function(dd) {
+    var trigger = dd.querySelector('.nav-dropdown-trigger');
+    if (!trigger) return;
+    // Desktop: hover
+    dd.addEventListener('mouseenter', function() {
+      if (window.innerWidth > 767) { dd.classList.add('open'); trigger.setAttribute('aria-expanded','true'); }
+    });
+    dd.addEventListener('mouseleave', function() {
+      if (window.innerWidth > 767) { dd.classList.remove('open'); trigger.setAttribute('aria-expanded','false'); }
+    });
+    // Click: toggle (works desktop & mobile)
+    trigger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var isOpen = dd.classList.toggle('open');
+      trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', function() {
+    dropdowns.forEach(function(dd) {
+      dd.classList.remove('open');
+      var trigger = dd.querySelector('.nav-dropdown-trigger');
+      if (trigger) trigger.setAttribute('aria-expanded','false');
+    });
+  });
+})();
 </script>
 </body>
 </html>
