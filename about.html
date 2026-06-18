@@ -605,6 +605,22 @@
     z-index: 2000;
     box-shadow: 0 8px 32px rgba(0,0,0,0.6);
   }
+  .nav-dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+  }
+  .nav-dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+  }
   .nav-dropdown.open .nav-dropdown-menu { display: block; }
   .nav-dropdown-menu a {
     display: block;
@@ -831,12 +847,22 @@
   dropdowns.forEach(function(dd) {
     var trigger = dd.querySelector('.nav-dropdown-trigger');
     if (!trigger) return;
-    // Desktop: hover
+    // Desktop: hover with delay to prevent gap-close
+    var leaveTimer;
     dd.addEventListener('mouseenter', function() {
-      if (window.innerWidth > 767) { dd.classList.add('open'); trigger.setAttribute('aria-expanded','true'); }
+      if (window.innerWidth > 767) {
+        clearTimeout(leaveTimer);
+        dd.classList.add('open');
+        trigger.setAttribute('aria-expanded','true');
+      }
     });
     dd.addEventListener('mouseleave', function() {
-      if (window.innerWidth > 767) { dd.classList.remove('open'); trigger.setAttribute('aria-expanded','false'); }
+      if (window.innerWidth > 767) {
+        leaveTimer = setTimeout(function() {
+          dd.classList.remove('open');
+          trigger.setAttribute('aria-expanded','false');
+        }, 200);
+      }
     });
     // Click: toggle (works desktop & mobile)
     trigger.addEventListener('click', function(e) {
