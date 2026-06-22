@@ -299,8 +299,20 @@
   }
   .carousel-dot.active { background: var(--gold); }
 
-  .model-body { padding: 28px; }
-  .model-name { font-size: 24px; text-transform: uppercase; margin-bottom: 12px; }
+  .model-body { padding: 28px; display: flex; flex-direction: column; flex: 1; }
+  .model-name { font-size: 24px; text-transform: uppercase; margin-bottom: 18px; }
+  .model-specs { flex: 1; margin-bottom: 24px; }
+  .model-spec-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .model-spec-row span:first-child { color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px; font-size: 12px; }
+  .model-spec-row span:last-child { color: var(--white); font-weight: 700; text-align: right; max-width: 55%; }
+  .spec-na { color: var(--gray) !important; font-weight: 400 !important; font-style: italic; }
   .model-desc {
     font-family: 'Roboto Condensed', sans-serif;
     color: var(--gray-light);
