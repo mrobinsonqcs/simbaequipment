@@ -220,7 +220,7 @@
   .section-models { background: var(--dark); }
   .models-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 28px;
   }
   .model-card {
@@ -731,31 +731,9 @@
       <p class="section-desc">From full-size track excavators to compact mini excavators, built for any job site.</p>
     </div>
     <div class="models-grid">
+
+      <!-- MINI EXCAVATOR -->
       <div class="model-card reveal stagger-1">
-        <div class="model-img">
-          <div class="carousel" data-carousel style="background-color:#1a1000;">
-            <div class="carousel-track">
-              <img src="../images/excavator-side.webp" alt="Excavator side profile view" class="carousel-slide active" style="object-fit:contain;">
-              <img src="../images/excavator-quarter.webp" alt="Excavator front quarter view" class="carousel-slide">
-              <img src="../images/excavator-digging.webp" alt="Excavator digging on a job site" class="carousel-slide" style="object-fit:contain;">
-            </div>
-            <button type="button" class="carousel-arrow carousel-arrow-prev" data-carousel-prev aria-label="Previous image">&#8249;</button>
-            <button type="button" class="carousel-arrow carousel-arrow-next" data-carousel-next aria-label="Next image">&#8250;</button>
-            <div class="carousel-dots">
-              <button type="button" class="carousel-dot active" data-carousel-dot aria-label="Image 1"></button>
-              <button type="button" class="carousel-dot" data-carousel-dot aria-label="Image 2"></button>
-              <button type="button" class="carousel-dot" data-carousel-dot aria-label="Image 3"></button>
-            </div>
-          </div>
-        </div>
-        <div class="model-body">
-          <h3 class="model-name">Crawler Excavator</h3>
-          <p class="model-desc">Full size hydraulic track excavators for construction, mining, and industrial applications. Multiple size classes from 6 ton to 60 ton available.</p>
-          <p class="model-note">Full specifications coming soon. Contact us for details.</p>
-          <a href="#contact" class="model-cta">Request a Quote</a>
-        </div>
-      </div>
-      <div class="model-card reveal stagger-2">
         <div class="model-img">
           <div class="carousel" data-carousel style="background-color:#1a1000;">
             <div class="carousel-track">
@@ -779,7 +757,9 @@
           <a href="#contact" class="model-cta">Request a Quote</a>
         </div>
       </div>
-      <div class="model-card reveal stagger-3">
+
+      <!-- WHEELED EXCAVATOR -->
+      <div class="model-card reveal stagger-2">
         <div class="model-img">
           <div class="carousel" data-carousel style="background-color:#1a1000;">
             <div class="carousel-track">
@@ -799,6 +779,32 @@
         <div class="model-body">
           <h3 class="model-name">Wheeled Excavator</h3>
           <p class="model-desc">Rubber tire excavators for road travel and fast repositioning between job sites. Multiple size classes available.</p>
+          <p class="model-note">Full specifications coming soon. Contact us for details.</p>
+          <a href="#contact" class="model-cta">Request a Quote</a>
+        </div>
+      </div>
+
+      <!-- CRAWLER EXCAVATOR -->
+      <div class="model-card reveal stagger-3">
+        <div class="model-img">
+          <div class="carousel" data-carousel style="background-color:#1a1000;">
+            <div class="carousel-track">
+              <img src="../images/excavator-side.webp" alt="Excavator side profile view" class="carousel-slide active" style="object-fit:contain;">
+              <img src="../images/excavator-quarter.webp" alt="Excavator front quarter view" class="carousel-slide">
+              <img src="../images/excavator-digging.webp" alt="Excavator digging on a job site" class="carousel-slide" style="object-fit:contain;">
+            </div>
+            <button type="button" class="carousel-arrow carousel-arrow-prev" data-carousel-prev aria-label="Previous image">&#8249;</button>
+            <button type="button" class="carousel-arrow carousel-arrow-next" data-carousel-next aria-label="Next image">&#8250;</button>
+            <div class="carousel-dots">
+              <button type="button" class="carousel-dot active" data-carousel-dot aria-label="Image 1"></button>
+              <button type="button" class="carousel-dot" data-carousel-dot aria-label="Image 2"></button>
+              <button type="button" class="carousel-dot" data-carousel-dot aria-label="Image 3"></button>
+            </div>
+          </div>
+        </div>
+        <div class="model-body">
+          <h3 class="model-name">Crawler Excavator</h3>
+          <p class="model-desc">Full size hydraulic track excavators for construction, mining, and industrial applications. Multiple size classes from 6 ton to 60 ton available.</p>
           <p class="model-note">Full specifications coming soon. Contact us for details.</p>
           <a href="#contact" class="model-cta">Request a Quote</a>
         </div>
