@@ -298,6 +298,57 @@
   .model-card:hover { transform: translateY(-6px); border-color: rgba(245,168,0,0.3); }
   .model-img { position: relative; height: 240px; overflow: hidden; background: #1a1000; }
   .model-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  .carousel { position: relative; width: 100%; height: 100%; overflow: hidden; }
+  .carousel-track { position: relative; width: 100%; height: 100%; }
+  .carousel-slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .carousel-slide.active { opacity: 1; }
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: var(--white);
+    border: none;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: background 0.2s;
+  }
+  .carousel-arrow:hover { background: rgba(245,168,0,0.8); }
+  .carousel-arrow-prev { left: 10px; }
+  .carousel-arrow-next { right: 10px; }
+  .carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 0; right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    z-index: 2;
+  }
+  .carousel-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s;
+  }
+  .carousel-dot.active { background: var(--gold); }
   .model-badge {
     position: absolute;
     top: 16px; left: 16px;
@@ -720,7 +771,20 @@
     <div class="models-grid">
       <div class="model-card reveal stagger-1">
         <div class="model-img">
-          <img src="/images/silent-3-30kw-front.webp" alt="Silent generator 3kW to 30kW">
+          <div class="carousel" data-carousel style="background-color:#1a1000;">
+            <div class="carousel-track">
+              <img src="/images/silent-3-30kw-front.webp" alt="Silent generator 3kW to 30kW front view" class="carousel-slide active" style="object-fit:cover;">
+              <img src="/images/silent-3-30kw-quarter.webp" alt="Silent generator 3kW to 30kW front quarter view" class="carousel-slide" style="object-fit:cover;">
+              <img src="/images/silent-3-30kw-doors.webp" alt="Silent generator 3kW to 30kW doors open view" class="carousel-slide" style="object-fit:cover;">
+            </div>
+            <button type="button" class="carousel-arrow carousel-arrow-prev" data-carousel-prev aria-label="Previous image">&#8249;</button>
+            <button type="button" class="carousel-arrow carousel-arrow-next" data-carousel-next aria-label="Next image">&#8250;</button>
+            <div class="carousel-dots">
+              <button type="button" class="carousel-dot active" data-carousel-dot aria-label="Image 1"></button>
+              <button type="button" class="carousel-dot" data-carousel-dot aria-label="Image 2"></button>
+              <button type="button" class="carousel-dot" data-carousel-dot aria-label="Image 3"></button>
+            </div>
+          </div>
         </div>
         <div class="model-body">
           <h3 class="model-name">3 kW &ndash; 30 kW</h3>
@@ -735,7 +799,20 @@
       </div>
       <div class="model-card reveal stagger-2">
         <div class="model-img">
-          <img src="/images/silent-30-150kw-front.webp" alt="Silent generator 30kW to 150kW">
+          <div class="carousel" data-carousel style="background-color:#1a1000;">
+            <div class="carousel-track">
+              <img src="/images/silent-30-150kw-front.webp" alt="Silent generator 30kW to 150kW front view" class="carousel-slide active" style="object-fit:cover;">
+              <img src="/images/silent-30-150kw-quarter.webp" alt="Silent generator 30kW to 150kW front quarter view" class="carousel-slide" style="object-fit:cover;">
+              <img src="/images/silent-30-150kw-doors.webp" alt="Silent generator 30kW to 150kW doors open view" class="carousel-slide" style="object-fit:cover;">
+            </div>
+            <button type="button" class="carousel-arrow carousel-arrow-prev" data-carousel-prev aria-label="Previous image">&#8249;</button>
+            <button type="button" class="carousel-arrow carousel-arrow-next" data-carousel-next aria-label="Next image">&#8250;</button>
+            <div class="carousel-dots">
+              <button type="button" class="carousel-dot active" data-carousel-dot aria-label="Image 1"></button>
+              <button type="button" class="carousel-dot" data-carousel-dot aria-label="Image 2"></button>
+              <button type="button" class="carousel-dot" data-carousel-dot aria-label="Image 3"></button>
+            </div>
+          </div>
         </div>
         <div class="model-body">
           <h3 class="model-name">30 kW &ndash; 150 kW</h3>
@@ -750,7 +827,20 @@
       </div>
       <div class="model-card reveal stagger-3">
         <div class="model-img">
-          <img src="/images/silent-150kw-3mw-front.webp" alt="Silent generator 150kW to 3MW">
+          <div class="carousel" data-carousel style="background-color:#1a1000;">
+            <div class="carousel-track">
+              <img src="/images/silent-150kw-3mw-front.webp" alt="Silent generator 150kW to 3MW front view" class="carousel-slide active" style="object-fit:cover;">
+              <img src="/images/silent-150kw-3mw-quarter.webp" alt="Silent generator 150kW to 3MW front quarter view" class="carousel-slide" style="object-fit:cover;">
+              <img src="/images/silent-150kw-3mw-doors.webp" alt="Silent generator 150kW to 3MW doors open view" class="carousel-slide" style="object-fit:cover;">
+            </div>
+            <button type="button" class="carousel-arrow carousel-arrow-prev" data-carousel-prev aria-label="Previous image">&#8249;</button>
+            <button type="button" class="carousel-arrow carousel-arrow-next" data-carousel-next aria-label="Next image">&#8250;</button>
+            <div class="carousel-dots">
+              <button type="button" class="carousel-dot active" data-carousel-dot aria-label="Image 1"></button>
+              <button type="button" class="carousel-dot" data-carousel-dot aria-label="Image 2"></button>
+              <button type="button" class="carousel-dot" data-carousel-dot aria-label="Image 3"></button>
+            </div>
+          </div>
         </div>
         <div class="model-body">
           <h3 class="model-name">150 kW &ndash; 3 MW</h3>
@@ -972,6 +1062,24 @@
     });
   });
 })();
+</script>
+
+<script>
+  document.querySelectorAll('[data-carousel]').forEach(function(carousel) {
+    var slides = carousel.querySelectorAll('.carousel-slide');
+    var dots = carousel.querySelectorAll('[data-carousel-dot]');
+    var prevBtn = carousel.querySelector('[data-carousel-prev]');
+    var nextBtn = carousel.querySelector('[data-carousel-next]');
+    var current = 0;
+    function goTo(index) {
+      current = (index + slides.length) % slides.length;
+      slides.forEach(function(s, i) { s.classList.toggle('active', i === current); });
+      dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+    }
+    if (prevBtn) prevBtn.addEventListener('click', function() { goTo(current - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function() { goTo(current + 1); });
+    dots.forEach(function(dot, i) { dot.addEventListener('click', function() { goTo(i); }); });
+  });
 </script>
 </body>
 </html>
