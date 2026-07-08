@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Forklifts | Simba Equipment</title>
-<meta name="description" content="Simba Equipment forklifts for warehouse and job site applications. Multiple capacity classes available. Contact us for pricing and availability.">
+<title>Container Generators | Simba Equipment</title>
+<meta name="description" content="Simba Equipment containerized diesel generators from 500kW to 3MW. Cummins, Doosan, and Perkins engines with Stamford and Leroy-Somer alternators.">
+<link rel="icon" type="image/svg+xml" href="/assets/simba-icon.svg">
+<link rel="canonical" href="https://simbaequipment.com/equipment/generators/container">
 <meta property="og:site_name" content="Simba Equipment">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Forklifts | Simba Equipment">
-<meta property="og:description" content="Simba Equipment forklifts for warehouse and job site applications. Multiple capacity classes available. Contact us for pricing and availability.">
-<meta property="og:image" content="https://simbaequipment.com/images/forklift-side.webp">
-<link rel="icon" type="image/svg+xml" href="/assets/simba-icon.svg">
-<link rel="canonical" href="https://simbaequipment.com/equipment/forklifts">
+<meta property="og:title" content="Container Generators | Simba Equipment">
+<meta property="og:description" content="Simba Equipment containerized diesel generators from 500kW to 3MW. Cummins, Doosan, and Perkins engines with Stamford and Leroy-Somer alternators.">
+<meta property="og:image" content="https://simbaequipment.com/images/container-500kw-3mw-front.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -122,19 +122,11 @@
   .btn-secondary { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.25); }
   .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
 
-  /* PAGE HERO */
+  /* PAGE HERO (centered) */
   .page-hero {
-    position: relative;
-    padding: 160px 0 0;
-    background: radial-gradient(ellipse at top right, rgba(245,168,0,0.08), transparent 60%), var(--black);
-    overflow: hidden;
-  }
-  .page-hero-inner {
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    align-items: center;
-    gap: 48px;
-    padding-bottom: 64px;
+    padding: 160px 0 80px;
+    background: radial-gradient(ellipse at top center, rgba(245,168,0,0.07), transparent 60%), var(--black);
+    text-align: center;
   }
   .page-hero-eyebrow {
     display: inline-block;
@@ -150,52 +142,68 @@
     margin-bottom: 24px;
   }
   .page-hero-title {
-    font-size: clamp(34px, 5vw, 64px);
-    line-height: 1.05;
+    font-size: clamp(44px, 8vw, 96px);
+    line-height: 1;
     text-transform: uppercase;
-    margin-bottom: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
   }
   .page-hero-title em { color: var(--gold); font-style: normal; }
   .page-hero-sub {
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     color: var(--gray-light);
-    max-width: 520px;
-    margin-bottom: 32px;
+    max-width: 560px;
+    margin: 0 auto 32px;
   }
-  .page-hero-img {
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid rgba(245,168,0,0.15);
-    background: #1a1000;
-  }
-  .page-hero-img img { width: 100%; height: 100%; object-fit: contain; }
 
-  .page-hero-stats {
+  /* CINEMATIC GENERATORS HERO */
+  .gen-hero {
+    position: relative;
+    min-height: 82vh;
     display: flex;
-    border-top: 1px solid rgba(255,255,255,0.07);
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+    align-items: flex-end;
+    overflow: hidden;
+    background: #0d0700;
   }
-  .page-hero-stat {
-    flex: 1;
-    text-align: center;
-    padding: 28px 20px;
-    border-right: 1px solid rgba(255,255,255,0.07);
+  .gen-hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
   }
-  .page-hero-stat:last-child { border-right: none; }
-  .page-hero-stat-value {
-    font-family: 'Oswald', sans-serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--gold);
+  .gen-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(to top, rgba(10,7,0,0.95) 0%, rgba(10,7,0,0.45) 45%, rgba(10,7,0,0.15) 100%),
+      linear-gradient(to right, rgba(10,7,0,0.85) 0%, rgba(10,7,0,0.2) 60%, transparent 100%);
   }
-  .page-hero-stat-label {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 13px;
+  .gen-hero-content {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 84px;
+    padding-top: 140px;
+    max-width: 720px;
+  }
+  .gen-hero-title {
+    font-size: clamp(48px, 8vw, 104px);
+    line-height: 0.95;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--gray);
-    margin-top: 6px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  .gen-hero-title em { color: var(--gold); font-style: normal; }
+  .gen-hero-sub {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 22px;
+    color: var(--gray-light);
+    max-width: 560px;
+    margin-bottom: 32px;
   }
 
   /* SECTION */
@@ -218,86 +226,81 @@
   }
   .section-desc { font-family: 'Roboto Condensed', sans-serif; color: var(--gray-light); font-size: 17px; }
 
-  /* MODELS */
+  /* CATEGORY CARDS (landing) */
+  .section-categories { background: var(--black); }
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .category-card {
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.25s, border-color 0.25s;
+  }
+  .category-card:hover { transform: translateY(-6px); border-color: rgba(245,168,0,0.3); }
+  .category-img {
+    height: 220px;
+    overflow: hidden;
+    background: #1a1000;
+  }
+  .category-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  .category-body { padding: 24px 26px 28px; }
+  .category-cat {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .category-name { font-size: 23px; text-transform: uppercase; margin-bottom: 8px; }
+  .category-desc { font-family: 'Roboto Condensed', sans-serif; color: var(--gray-light); font-size: 15px; }
+  .category-arrow {
+    position: absolute;
+    top: 16px; right: 16px;
+    width: 32px; height: 32px;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    font-size: 14px;
+    font-weight: 900;
+    border-radius: 4px;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .category-card:hover .category-arrow { opacity: 1; transform: translateY(0); }
+
+  /* MODELS / RANGE CARDS */
   .section-models { background: var(--dark); }
-
-  .model-single { display: flex; justify-content: center; }
-  .model-single .model-card { max-width: 540px; width: 100%; }
-
+  .models-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  .models-grid.single { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
   .model-card {
     background: var(--dark2);
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.25s, border-color 0.25s;
     display: flex;
     flex-direction: column;
+    transition: transform 0.25s, border-color 0.25s;
   }
-  .model-card:hover { transform: translateY(-6px); border-color: rgba(245,168,0,0.25); }
-  .model-img { position: relative; height: 280px; overflow: hidden; background: #1a1000; }
-
-  /* CAROUSEL */
-  .carousel { position: absolute; inset: 0; }
-  .carousel-track { position: relative; width: 100%; height: 100%; }
-  .carousel-slide {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    opacity: 0;
-    transition: opacity 0.6s ease;
-  }
-  .carousel-slide.active { opacity: 1; }
-  .carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 36px;
-    height: 36px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(10,10,10,0.55);
-    color: var(--gold);
-    font-family: 'Oswald', sans-serif;
-    font-size: 18px;
-    line-height: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 2;
-    transition: background 0.2s, color 0.2s;
-  }
-  .carousel-arrow:hover { background: rgba(10,10,10,0.8); color: var(--white); }
-  .carousel-arrow-prev { left: 12px; }
-  .carousel-arrow-next { right: 12px; }
-  .carousel-dots {
-    position: absolute;
-    bottom: 14px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    z-index: 2;
-  }
-  .carousel-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--gray);
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
-  }
-  .carousel-dot.active { background: var(--gold); transform: scale(1.25); }
-
+  .model-card:hover { transform: translateY(-6px); border-color: rgba(245,168,0,0.3); }
+  .model-img { position: relative; height: 240px; overflow: hidden; background: #1a1000; }
+  .model-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
   .model-badge {
     position: absolute;
-    top: 16px;
-    left: 16px;
+    top: 16px; left: 16px;
     background: var(--gold);
     color: var(--black);
     font-family: 'Roboto Condensed', sans-serif;
@@ -310,25 +313,29 @@
     z-index: 2;
   }
   .model-body { padding: 28px; display: flex; flex-direction: column; flex: 1; }
-  .model-name { font-size: 26px; text-transform: uppercase; margin-bottom: 12px; }
-  .model-desc {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 15px;
-    color: var(--gray-light);
-    margin-bottom: 20px;
-    line-height: 1.6;
-  }
+  .model-name { font-size: 24px; text-transform: uppercase; margin-bottom: 18px; }
   .model-specs { flex: 1; margin-bottom: 24px; }
   .model-spec-row {
     display: flex;
     justify-content: space-between;
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 15px;
-    padding: 10px 0;
+    font-size: 14px;
+    padding: 9px 0;
     border-bottom: 1px solid rgba(255,255,255,0.06);
   }
-  .model-spec-row span:first-child { color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px; font-size: 13px; }
-  .model-spec-row span:last-child { color: var(--white); font-weight: 700; }
+  .model-spec-row span:first-child { color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px; font-size: 12px; }
+  .model-spec-row span:last-child { color: var(--white); font-weight: 700; text-align: right; max-width: 60%; }
+  .model-note {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    color: var(--gray);
+    font-style: italic;
+    margin-bottom: 24px;
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.03);
+    border-left: 2px solid rgba(245,168,0,0.3);
+    border-radius: 0 4px 4px 0;
+  }
   .model-cta {
     display: block;
     text-align: center;
@@ -339,21 +346,11 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 14px;
-    padding: 14px;
+    padding: 14px 28px;
     border-radius: 4px;
     transition: background 0.2s;
   }
   .model-cta:hover { background: var(--gold-dark); }
-
-  .models-note {
-    text-align: center;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 16px;
-    color: var(--gray);
-    margin-top: 48px;
-    padding-top: 32px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
 
   /* FEATURES */
   .section-features { background: var(--black); }
@@ -475,6 +472,7 @@
   .stagger-2.visible { transition-delay: 0.1s; }
   .stagger-3.visible { transition-delay: 0.15s; }
   .stagger-4.visible { transition-delay: 0.2s; }
+  .stagger-5.visible { transition-delay: 0.25s; }
 
   /* MOBILE */
   @media (max-width: 767px) {
@@ -482,24 +480,12 @@
     .nav-links a { font-size: 12px; padding: 6px 10px; }
     .nav-cta { padding: 8px 14px !important; }
 
-    .page-hero { padding-top: 120px; }
-    .page-hero-inner { grid-template-columns: 1fr; gap: 32px; padding-bottom: 40px; }
-    .page-hero-img { order: -1; }
-    .page-hero-stats { flex-wrap: wrap; }
-    .page-hero-stat {
-      flex: 1 1 50%;
-      max-width: 50%;
-      border-right: 1px solid rgba(255,255,255,0.07);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      padding: 18px 12px;
-    }
-    .page-hero-stat:nth-child(2n) { border-right: none; }
-    .page-hero-stat:nth-last-child(-n+2) { border-bottom: none; }
+    .page-hero { padding: 100px 20px 60px; }
+    .gen-hero { min-height: 70vh; }
+    .gen-hero-content { padding-top: 110px; padding-bottom: 56px; }
 
-    .model-single .model-card { max-width: 100%; }
-    .carousel-arrow { width: 32px; height: 32px; font-size: 16px; }
-    .carousel-arrow-prev { left: 8px; }
-    .carousel-arrow-next { right: 8px; }
+    .categories-grid { grid-template-columns: 1fr; }
+    .models-grid { grid-template-columns: 1fr; }
     .features-grid { grid-template-columns: repeat(2, 1fr); }
     .section-contact { grid-template-columns: 1fr; gap: 40px; }
     .form-row { grid-template-columns: 1fr; }
@@ -582,7 +568,7 @@
       justify-content: center;
       border-bottom: none;
     }
-  
+
     /* mobile dropdown */
     .nav-dropdown { width: 100%; }
     .nav-dropdown-trigger {
@@ -669,14 +655,13 @@
     padding-bottom: 12px;
   }
   .nav-dropdown-menu .dd-all-link:hover { background: rgba(245,168,0,0.08); }
-
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="../index.html" class="nav-logo">
-    <img src="../assets/simba-icon.svg" alt="Simba Equipment">
+  <a href="/" class="nav-logo">
+    <img src="/assets/simba-icon.svg" alt="Simba Equipment">
     <span>SIMBA <em>EQUIPMENT</em></span>
   </a>
   <button class="nav-toggle" aria-label="Toggle menu">
@@ -715,113 +700,38 @@
 <!-- PAGE HERO -->
 <section class="page-hero">
   <div class="container">
-    <div class="page-hero-inner">
-      <div class="reveal visible">
-        <span class="page-hero-eyebrow">Material Handling</span>
-        <h1 class="page-hero-title"><em>Forklifts</em></h1>
-        <p class="page-hero-sub">Built for the Warehouse and Job Site.</p>
-        <div style="display:flex; gap:16px; flex-wrap:wrap;">
-          <a href="#models" class="btn-primary">View Models &#8594;</a>
-          <a href="#contact" class="btn-secondary">Request a Quote</a>
-        </div>
-      </div>
-      <div class="page-hero-img reveal visible stagger-1">
-        <img src="../images/forklift-raised.webp" alt="Forklift with mast raised">
-      </div>
-    </div>
-    <div class="page-hero-stats reveal visible stagger-2">
-      <div class="page-hero-stat">
-        <div class="page-hero-stat-value">Multiple</div>
-        <div class="page-hero-stat-label">Capacity Classes</div>
-      </div>
-      <div class="page-hero-stat">
-        <div class="page-hero-stat-value">Electric &amp; Diesel</div>
-        <div class="page-hero-stat-label">Power Options</div>
-      </div>
-      <div class="page-hero-stat">
-        <div class="page-hero-stat-value">Multiple</div>
-        <div class="page-hero-stat-label">Mast Heights</div>
-      </div>
-      <div class="page-hero-stat">
-        <div class="page-hero-stat-value">Built for</div>
-        <div class="page-hero-stat-label">Daily Use</div>
-      </div>
+    <div class="reveal visible">
+      <span class="page-hero-eyebrow">Containerized Power Solutions</span>
+      <h1 class="page-hero-title">CONTAINER <em>GENERATORS</em></h1>
+      <p class="page-hero-sub">Containerized power solutions for large-scale and continuous duty.</p>
+      <a href="#contact" class="btn-primary">Request a Quote &#8594;</a>
     </div>
   </div>
 </section>
 
 <!-- MODELS -->
-<section class="section section-models" id="models">
+<section class="section section-models">
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-label">The Lineup</span>
-      <h2 class="section-title">Forklift</h2>
-      <p class="section-desc">Reliable forklifts built for warehouse, yard, and job site material handling.</p>
+      <span class="section-label">Power Ranges</span>
+      <h2 class="section-title">CONTAINER GENERATORS Lineup</h2>
+      <p class="section-desc">Containerized diesel power plants engineered for large-scale prime power and demanding continuous operation.</p>
     </div>
-    <div class="model-single reveal">
-      <div class="model-card">
+    <div class="models-grid single">
+      <div class="model-card reveal stagger-1">
         <div class="model-img">
-          <span class="model-badge">Material Handling</span>
-          <div class="carousel" data-carousel>
-            <div class="carousel-track">
-              <img src="../images/forklift-side.webp" alt="Forklift side profile view" class="carousel-slide active">
-              <img src="../images/forklift-quarter.webp" alt="Forklift front quarter view" class="carousel-slide">
-              <img src="../images/forklift-raised.webp" alt="Forklift with mast raised" class="carousel-slide">
-            </div>
-            <button type="button" class="carousel-arrow carousel-arrow-prev" data-carousel-prev aria-label="Previous image">&#8249;</button>
-            <button type="button" class="carousel-arrow carousel-arrow-next" data-carousel-next aria-label="Next image">&#8250;</button>
-            <div class="carousel-dots">
-              <button type="button" class="carousel-dot active" data-carousel-dot aria-label="Show image 1"></button>
-              <button type="button" class="carousel-dot" data-carousel-dot aria-label="Show image 2"></button>
-              <button type="button" class="carousel-dot" data-carousel-dot aria-label="Show image 3"></button>
-            </div>
-          </div>
+          <img src="/images/container-500kw-3mw-front.webp" alt="Container generator 500kW to 3MW">
         </div>
         <div class="model-body">
-          <h3 class="model-name">Forklift</h3>
-          <p class="model-desc">Built for the warehouse and job site. Available in multiple capacity classes with electric and diesel power options to match your operation.</p>
+          <h3 class="model-name">500 kW &ndash; 3 MW</h3>
           <div class="model-specs">
-            <div class="model-spec-row"><span>Capacity Classes</span><span>Multiple Available</span></div>
-            <div class="model-spec-row"><span>Power Options</span><span>Electric &amp; Diesel</span></div>
-            <div class="model-spec-row"><span>Mast Heights</span><span>Multiple Options</span></div>
-            <div class="model-spec-row"><span>Application</span><span>Warehouse &amp; Job Site</span></div>
+            <div class="model-spec-row"><span>Power Range</span><span>500 kW &ndash; 3 MW</span></div>
+            <div class="model-spec-row"><span>Engine Options</span><span>Cummins, Doosan, Perkins</span></div>
+            <div class="model-spec-row"><span>Alternator Options</span><span>Stamford, Leroy-Somer</span></div>
+            <div class="model-spec-row"><span>Frequency</span><span>60 Hz (US-Spec)</span></div>
           </div>
           <a href="#contact" class="model-cta">Request a Quote</a>
         </div>
-      </div>
-    </div>
-    <p class="models-note reveal">Full specifications and additional models coming soon. Contact us for current availability and pricing.</p>
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section class="section section-features">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-label">Why Simba Forklifts</span>
-      <h2 class="section-title">Built to Work</h2>
-      <p class="section-desc">Versatile, dependable forklifts ready for the demands of daily warehouse and job site operation.</p>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card reveal stagger-1">
-        <div class="feature-num">01</div>
-        <h3 class="feature-title">Multiple Capacity Classes</h3>
-        <p class="feature-desc">Choose the right lift capacity for your application, from light warehouse duty to heavier yard work.</p>
-      </div>
-      <div class="feature-card reveal stagger-2">
-        <div class="feature-num">02</div>
-        <h3 class="feature-title">Electric and Diesel Options</h3>
-        <p class="feature-desc">Run electric for indoor, low-emission operation or diesel for outdoor power and extended run time.</p>
-      </div>
-      <div class="feature-card reveal stagger-3">
-        <div class="feature-num">03</div>
-        <h3 class="feature-title">Mast Height Options</h3>
-        <p class="feature-desc">Multiple mast height configurations to handle racking, stacking, and load placement at the height you need.</p>
-      </div>
-      <div class="feature-card reveal stagger-4">
-        <div class="feature-num">04</div>
-        <h3 class="feature-title">Built for Daily Use</h3>
-        <p class="feature-desc">Durable components and ergonomic controls designed for reliable performance, shift after shift.</p>
       </div>
     </div>
   </div>
@@ -877,56 +787,51 @@
         <div class="form-group">
           <label>Equipment of Interest</label>
           <select name="equipment">
-            <option>Telehandlers</option>
-            <option>Man Lifts</option>
-            <option>Truck Mounted Cranes</option>
-            <option>Knuckle Boom Cranes</option>
-            <option>Insulated Arm Trucks</option>
-            <option selected>Forklifts</option>
-            <option>Excavators</option>
-            <option>Loaders</option>
-            <option>Concrete Laser Screeds</option>
+            <option>Silent Generators</option>
+            <option>Open Frame Generators</option>
+            <option>Mobile Generators</option>
+            <option selected>Container Generators</option>
+            <option>Natural Gas Generators</option>
             <option>Other / Not Sure</option>
           </select>
         </div>
-        <div class="form-group"><label>Message</label><textarea name="message" placeholder="Tell us about your project, capacity needed, and timeline..."></textarea></div>
+        <div class="form-group"><label>Message</label><textarea name="message" placeholder="Tell us about your project, power requirements, and timeline..."></textarea></div>
         <button type="submit" class="form-submit">Send Request &#8594;</button>
       </form>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="../assets/simba-logo-svg.svg" alt="Simba Equipment" style="height:120px;width:auto;display:block;">
+        <img src="/assets/simba-logo-svg.svg" alt="Simba Equipment" style="height:120px;width:auto;display:block;">
         <p>Heavy equipment sales, rentals, and service built around the needs of your job site.</p>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Equipment</div>
         <ul>
-          <li><a href="telehandlers.html#models">Telehandlers</a></li>
-          <li><a href="man-lifts.html">Man Lifts</a></li>
-          <li><a href="truck-mounted-cranes.html">Truck-Mounted Cranes</a></li>
-          <li><a href="knuckle-boom-cranes.html">Knuckle Boom Cranes</a></li>
+          <li><a href="/equipment/telehandlers">Telehandlers</a></li>
+          <li><a href="/equipment/man-lifts">Man Lifts</a></li>
+          <li><a href="/equipment/generators">Generators</a></li>
+          <li><a href="/equipment/excavators">Excavators</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <div class="footer-col-title">More Equipment</div>
+        <div class="footer-col-title">Generators</div>
         <ul>
-          <li><a href="insulated-arm-trucks.html">Insulated Arm Trucks</a></li>
-          <li><a href="excavators.html">Excavators</a></li>
-          <li><a href="loaders-bulldozers.html">Loaders</a></li>
-          <li><a href="concrete-laser-screeds.html">Concrete Laser Screeds</a></li>
+          <li><a href="/equipment/generators/silent">Silent Generators</a></li>
+          <li><a href="/equipment/generators/open-frame">Open Frame Generators</a></li>
+          <li><a href="/equipment/generators/mobile">Mobile Generators</a></li>
+          <li><a href="/equipment/generators/natural-gas">Natural Gas Generators</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Company</div>
         <ul>
-          <li><a href="../index.html">Home</a></li>
-    <a href="/about">About</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
           <li><a href="/equipment">All Equipment</a></li>
           <li><a href="#contact">Get a Quote</a></li>
         </ul>
@@ -951,24 +856,6 @@
   }, { threshold: 0.15 });
   revealEls.forEach(el => observer.observe(el));
 
-  document.querySelectorAll('[data-carousel]').forEach(carousel => {
-    const slides = carousel.querySelectorAll('.carousel-slide');
-    const dots = carousel.querySelectorAll('[data-carousel-dot]');
-    const prevBtn = carousel.querySelector('[data-carousel-prev]');
-    const nextBtn = carousel.querySelector('[data-carousel-next]');
-    let current = 0;
-
-    function goTo(index) {
-      current = (index + slides.length) % slides.length;
-      slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
-      dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
-    }
-
-    prevBtn.addEventListener('click', () => goTo(current - 1));
-    nextBtn.addEventListener('click', () => goTo(current + 1));
-    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
-  });
-
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function (e) {
       const target = document.querySelector(this.getAttribute('href'));
@@ -979,7 +866,6 @@
     });
   });
 </script>
-
 
 <script>
   (function () {
@@ -1026,7 +912,6 @@
   dropdowns.forEach(function(dd) {
     var trigger = dd.querySelector('.nav-dropdown-trigger');
     if (!trigger) return;
-    // Desktop: hover with delay to prevent gap-close
     var leaveTimer;
     dd.addEventListener('mouseenter', function() {
       if (window.innerWidth > 767) {
@@ -1043,7 +928,6 @@
         }, 200);
       }
     });
-    // Click: toggle (works desktop & mobile)
     trigger.addEventListener('click', function(e) {
       e.stopPropagation();
       var isOpen = dd.classList.toggle('open');
